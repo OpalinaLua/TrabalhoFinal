@@ -20,7 +20,7 @@ export const Home = () => {
     getData();
   }, []);
 
-  if (loading) return <h1>Carregando... teste</h1>;
+  if (loading) return <h1>Carregando...</h1>;
 
   return (
     <>
