@@ -1,0 +1,14 @@
+{
+  "produtos": [
+    {
+      "nome": "abadabadu",
+      "id": 1,
+      "dscricao": "fred flinston"
+    },
+    {
+      "nome": "velma",
+      "id": 2,
+      "dscricao": "daphne"
+    }
+  ]
+}
