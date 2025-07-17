@@ -19,7 +19,7 @@ export const FormularioP = ({
       </label>
       <label>
         Valor:
-        <textarea name="Valor" value={produtos.valor} onChange={onChange} />
+        <textarea name="valor" value={produtos.valor} onChange={onChange} />
       </label>
       <label>
         Descrição:
