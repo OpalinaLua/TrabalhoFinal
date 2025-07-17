@@ -8,7 +8,7 @@ export const Footer = () => {
   return (
     <>
       <footer className={styles.footer}>
-        <p> Mini Loja Todos os direitos reservados</p>
+        <p> &copy 2025 Mini Loja Todos os direitos reservados</p>
         <p>
           <IoIosPartlySunny /> Confira a previsão do tempo para compras
           inteligentes!! <FaArrowRight color="blue" />{" "}
