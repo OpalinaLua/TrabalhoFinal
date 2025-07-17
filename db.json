@@ -1,16 +1,10 @@
 {
   "produtos": [
     {
-      "id": "e476",
-      "nome": "sdfsdf",
-      "valor": "jghjghj",
-      "descricao": "hfggh"
-    },
-    {
       "id": "e61a",
-      "nome": "dfgdfg",
-      "valor": "gdfgdfg",
-      "descricao": "gdfgdf"
+      "nome": "test Edit Nome",
+      "valor": "test edit valor 000",
+      "descricao": "test edit descricao"
     },
     {
       "id": "eda4",

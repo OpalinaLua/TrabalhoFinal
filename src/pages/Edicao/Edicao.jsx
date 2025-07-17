@@ -40,24 +40,24 @@ export const Edicao = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await editarProdutos(produto);
+    await editarProdutos(id, produto);
     navegacao("/");
   };
 
   const isChanged = () => {
-    if (!initialTarefa) return false; // ou true se preferir permitir
+    if (!produtoInicial) return false;
     return (
       produto.nome !== produtoInicial.nome ||
       produto.valor !== produtoInicial.valor ||
       produto.descricao !== produtoInicial.descricao
     );
   };
-  if (!produto && loading) return <p>Carregando...</p>;
+  if (loading) return <p>Carregando...</p>;
   return (
     <div>
       <div>
         <button onClick={() => navegacao("/")}>Voltar</button>
-        <h1>Novo Produto</h1>
+        <h1>Deletar Produto</h1>
         <button onClick={handleDelete}>Deletar </button>
       </div>
       <h1>Editar Produtos</h1>
