@@ -4,6 +4,10 @@ export const buscarProdutos = async () => {
     const {data} = await api.get("/produtos")
     return data
 }
+export const buscarProdutosPorID = async (id) => {
+    const {data} = await api.get(`/produtos/${id}`)
+    return data
+}
 export const criarProdutos = async (novoProduto) => {
     const {data} = await api.post(`/produtos`, novoProduto)
     return data

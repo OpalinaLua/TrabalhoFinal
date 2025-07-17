@@ -6,7 +6,7 @@ import { FormularioP } from "../../components/FormularioP/FormularioP";
 export const Cadastro = () => {
   const navegacao = useNavigate();
   const produtoInicial = {
-    titulo: "",
+    nome: "",
     valor: "",
     descricao: "",
   };
@@ -14,7 +14,7 @@ export const Cadastro = () => {
   const [produto, setProdutos] = useState(produtoInicial);
 
   const handleChange = (e) => {
-    setProdutos({ ...produto, [e.target.nome]: e.target.valor });
+    setProdutos({ ...produto, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
@@ -22,8 +22,9 @@ export const Cadastro = () => {
     await criarProdutos(produto);
     navegacao("/");
   };
+
   const isChanged =
-    produto.titulo.trim() !== produtoInicial.titulo ||
+    produto.nome.trim() !== produtoInicial.nome ||
     produto.valor.trim() !== produtoInicial.valor ||
     produto.descricao.trim() !== produtoInicial.descricao;
 

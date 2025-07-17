@@ -1,14 +1,16 @@
 {
   "produtos": [
     {
-      "nome": "abadabadu",
-      "id": 1,
-      "dscricao": "fred flinston"
+      "id": "e61a",
+      "nome": "test Edit Nome",
+      "valor": "test edit valor 000",
+      "descricao": "test edit descricao"
     },
     {
-      "nome": "velma",
-      "id": 2,
-      "dscricao": "daphne"
+      "id": "eda4",
+      "nome": "test",
+      "valor": "20",
+      "descricao": "sfddfd"
     }
   ]
 }
