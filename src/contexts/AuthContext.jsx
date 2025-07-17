@@ -12,7 +12,6 @@ export const AuthProvider = ({ children }) => {
     ) {
       setUser({ name: usernameOrEmail });
       alert("Login bem-sucedido!");
-      navigate("/");
     } else {
       alert("Usuário ou senha incorretos");
       setUser(null);

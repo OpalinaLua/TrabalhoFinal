@@ -1,8 +1,10 @@
 import { TiShoppingCart } from "react-icons/ti";
 import styles from "./Header.module.css";
 import { IoCalendarOutline } from "react-icons/io5";
+import { Navbar } from "../Navbar/Navbar";
+import styles from "./Header.module.css";
 
-function Header() {
+export function Header() {
   const today = new Date();
   const formattedDate = today.toLocaleDateString("pt-BR", {
     weekday: "long",
@@ -22,5 +24,3 @@ function Header() {
     </header>
   );
 }
-
-export default Header;
