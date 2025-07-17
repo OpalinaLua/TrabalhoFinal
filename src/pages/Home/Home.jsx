@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
-import { getProduct } from "../../service/apiService";
-import  Header  from "../../components/Header/Header";
+import { buscarProdutos } from "../../service/apiService";
+import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/Footer/Footer";
+import { buscarProdutos } from "../../service/apiService";
+
 
 export const Home = () => {
   const [produtos, setProdutos] = useState([]);
@@ -9,7 +11,7 @@ export const Home = () => {
 
   const getData = async () => {
     try {
-      const data = await getProduct();
+      const data = await buscarProdutos();
       setProdutos(data);
     } catch (error) {
       console.error(error);
