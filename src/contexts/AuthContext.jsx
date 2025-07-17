@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 const AuthContext = createContext(null);
 
@@ -12,9 +12,11 @@ export const AuthProvider = ({ children }) => {
     ) {
       setUser({ name: usernameOrEmail });
       alert("Login bem-sucedido!");
+      return true;
     } else {
       alert("Usuário ou senha incorretos");
       setUser(null);
+      return false;
     }
   };
 

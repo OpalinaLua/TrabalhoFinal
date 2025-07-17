@@ -12,6 +12,7 @@ export const Login = () => {
   const handleLoginSubmit = (e) => {
     e.preventDefault();
     login(usuarioInput, senhaInput);
+    navigate("/");
   };
 
   return (
