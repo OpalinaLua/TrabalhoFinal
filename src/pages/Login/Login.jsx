@@ -1,18 +1,42 @@
-import { useState } from "react";
-
-//usuário/email, senha, botão, confirmação de login(usuário/email e senha corretos), navigate para home
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router";
+import { AuthContext } from "../../contexts/AuthContext";
 
 export const Login = () => {
-  const [ususario, setUsuario] = useState(null);
-  const [email, setEmail] = useState(null);
-  const login = (usuario, email, senha) => {
-    if (
-      usuario === "adimin" ||
-      (email === "adimin@teste.com" && senha === "123")
-    ) {
-      setUser({ user });
-    } else {
-      alert("Usuário ou senha incorretos");
-    }
+  const [usuarioInput, setUsuarioInput] = useState("");
+  const [senhaInput, setSenhaInput] = useState("");
+  const { login, user } = useContext(AuthContext);
+
+  const navigate = useNavigate();
+
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+    login(usuarioInput, senhaInput);
   };
+
+  return (
+    <div>
+      <h1>Login</h1>
+      <form onSubmit={handleLoginSubmit}>
+        {" "}
+        {}
+        <input
+          type="text"
+          placeholder="Usuário ou Email"
+          value={usuarioInput}
+          onChange={(e) => setUsuarioInput(e.target.value)}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Senha"
+          value={senhaInput}
+          onChange={(e) => setSenhaInput(e.target.value)}
+          required
+        />
+        <button type="submit">Entrar</button>
+      </form>
+      {user && <p>Bem-vindo, {user.name}!</p>} {}
+    </div>
+  );
 };
