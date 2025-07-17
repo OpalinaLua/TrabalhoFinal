@@ -1,13 +1,13 @@
-import { Outlet } from "react-router"
-import Header from "../Header/Header"
-import { Footer } from "../Footer/Footer"
+import { Outlet } from "react-router";
+import Header from "../Header/Header";
+import { Footer } from "../Footer/Footer";
 
-export const Navbar = ()=>{
-    return (
-        <>
-        <Header/>
-        <Outlet/>
-        <Footer/>
-        </>
-    )
-}
+export const Navbar = () => {
+  return (
+    <>
+      <Header />
+      <Outlet />
+      <Footer />
+    </>
+  );
+};
