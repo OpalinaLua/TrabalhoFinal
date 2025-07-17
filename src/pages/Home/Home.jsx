@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getProduct } from "../../service/apiService";
+import { buscarProdutos } from "../../service/apiService";
 
 export const Home = () => {
   const [produtos, setProdutos] = useState([]);
@@ -7,7 +7,7 @@ export const Home = () => {
 
   const getData = async () => {
     try {
-      const data = await getProduct();
+      const data = await buscarProdutos();
       setProdutos(data);
     } catch (error) {
       console.error(error);
