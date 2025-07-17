@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
 import { buscarProdutos } from "../../service/apiService";
+import { Header } from "../../components/Header/Header";
+import { Footer } from "../../components/Footer/Footer";
+import { buscarProdutos } from "../../service/apiService";
+
 
 export const Home = () => {
   const [produtos, setProdutos] = useState([]);
@@ -24,10 +28,12 @@ export const Home = () => {
 
   return (
     <>
+    <Header/>
       <h1>Home</h1>
       {produtos.map((produto) => (
         <p key={produto.id}>{produto.nome}</p>
       ))}
+      <Footer/>
     </>
   );
 };
