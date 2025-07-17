@@ -1,28 +1,28 @@
-
-.header{
-    background: url(https://img.freepik.com/fotos-premium/borrao-abstrato-e-shopping-desfocado-e-loja-de-varejo-para-plano-de-fundo_1339-165823.jpg);
-    color: black;
-    padding: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    bottom: auto;
-    width: 100%;
+.header {
+  background: url(https://img.freepik.com/fotos-premium/borrao-abstrato-e-shopping-desfocado-e-loja-de-varejo-para-plano-de-fundo_1339-165823.jpg);
+  color: black;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  bottom: auto;
+  width: 100%;
 }
-.header h1{
-    margin: 0;
-    font-size: 1.5rem;
-    }
-.date{
-font-size: 1rem;
-opacity: 0.8;
-    }
+.header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+.date {
+  font-size: 1rem;
+  opacity: 0.8;
+}
 
-    @media (max-width: 600px) {.header{
-        flex-direction: column;
-        align-items: flex-start;
-    }
-       
-    }
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
