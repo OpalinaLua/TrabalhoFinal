@@ -1,14 +1,16 @@
 {
   "produtos": [
     {
-      "nome": "abadabadu",
-      "id": 1,
-      "dscricao": "fred flinston"
+      "id": "e476",
+      "nome": "sdfsdf",
+      "valor": "jghjghj",
+      "descricao": "hfggh"
     },
     {
-      "nome": "velma",
-      "id": 2,
-      "dscricao": "daphne"
+      "id": "e61a",
+      "nome": "dfgdfg",
+      "valor": "gdfgdfg",
+      "descricao": "gdfgdf"
     }
   ]
 }
