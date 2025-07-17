@@ -1,4 +1,6 @@
+import { TiShoppingCart } from "react-icons/ti";
 import styles from "./Header.module.css";
+import { IoCalendarOutline } from "react-icons/io5";
 
 function Header() {
   const today = new Date();
@@ -9,8 +11,14 @@ function Header() {
   });
   return (
     <header className={styles.header}>
-      <div className={styles.logo}> 🛒 Mini Loja </div>
-      <div className={styles.date}>📅{formattedDate}</div>
+      <div className={styles.logo}>
+        {" "}
+        <TiShoppingCart /> Mini Loja{" "}
+      </div>
+      <div className={styles.date}>
+        <IoCalendarOutline />
+        {formattedDate}
+      </div>
     </header>
   );
 }

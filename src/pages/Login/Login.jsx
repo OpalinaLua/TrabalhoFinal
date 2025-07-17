@@ -1,11 +1,11 @@
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router";
-import { AuthContext } from "../../contexts/AuthContext";
+import { useAuth } from "../../contexts/AuthContext";
 
 export const Login = () => {
   const [usuarioInput, setUsuarioInput] = useState("");
   const [senhaInput, setSenhaInput] = useState("");
-  const { login, user } = useContext(AuthContext);
+  const { login, user } = useAuth();
 
   const navigate = useNavigate();
 

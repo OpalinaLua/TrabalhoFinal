@@ -22,5 +22,12 @@ export const Home = () => {
 
   if (loading) return <h1>Carregando...</h1>;
 
-  return <></>;
+  return (
+    <>
+      <h1>Home</h1>
+      {produtos.map((produto) => (
+        <p key={produto.id}>{produto.nome}</p>
+      ))}
+    </>
+  );
 };

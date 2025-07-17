@@ -1,6 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router";
-import { editarProdutos } from "../../service/apiService";
+import {
+  buscarProdutosPorID,
+  deletarProdutos,
+  editarProdutos,
+} from "../../service/apiService";
+import { FormularioP } from "../../components/FormularioP/FormularioP";
 
 export const Edicao = () => {
   const { id } = useParams();
@@ -10,8 +15,9 @@ export const Edicao = () => {
   const navegacao = useNavigate();
   const getData = async () => {
     try {
-      const produtos = await setTarefa(produtos);
-      setInitialTarefa(produtos);
+      const selecionadoProduto = await buscarProdutosPorID(id);
+      setProdutos(selecionadoProduto);
+      setProdutoinicial(selecionadoProduto);
     } catch (error) {
       console.error(error);
     } finally {
@@ -22,30 +28,46 @@ export const Edicao = () => {
     getData();
   }, []);
   const handleChange = (e) => {
-    setProdutos({ ...produto, [e.target.nome]: e.target.valor });
+    setProdutos({ ...produto, [e.target.name]: e.target.value });
+  };
+
+  const handleDelete = async () => {
+    const confirm = window.confirm("Tem certeza que deseja apagar?");
+    if (confirm) {
+      await deletarProdutos(id);
+      navegacao("/");
+    }
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
     await editarProdutos(produto);
     navegacao("/");
   };
-  const handleDelete = async () => {
-    const confirm = window.confirm("Tem certeza que deseja apagar?");
-    if (!produto && loading) return <p>Carregando...</p>;
+
+  const isChanged = () => {
+    if (!initialTarefa) return false; // ou true se preferir permitir
     return (
-      <div>
-        <div>
-          <button onClick={() => navegacao("/")}>Voltar</button>
-          <h1>Novo Produto</h1>
-          <FormularioP
-            produtos={produto}
-            onChange={handleChange}
-            onSubmit={handleSubmit}
-            isEditing
-            isChanged={isChanged}
-          />
-        </div>
-      </div>
+      produto.nome !== produtoInicial.nome ||
+      produto.valor !== produtoInicial.valor ||
+      produto.descricao !== produtoInicial.descricao
     );
   };
+  if (!produto && loading) return <p>Carregando...</p>;
+  return (
+    <div>
+      <div>
+        <button onClick={() => navegacao("/")}>Voltar</button>
+        <h1>Novo Produto</h1>
+        <button onClick={handleDelete}>Deletar </button>
+      </div>
+      <h1>Editar Produtos</h1>
+      <FormularioP
+        produtos={produto}
+        onChange={handleChange}
+        onSubmit={handleSubmit}
+        isEditing
+        isChanged={isChanged}
+      />
+    </div>
+  );
 };
