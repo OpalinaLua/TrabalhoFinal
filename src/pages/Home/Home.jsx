@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { buscarProdutos } from "../../service/apiService";
 
-
 export const Home = () => {
   const [produtos, setProdutos] = useState([]);
   const [loading, setLoading] = useState(true);
