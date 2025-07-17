@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useParams } from "react-router";
+import { useParams, useNavigate } from "react-router";
 import { editarProdutos } from "../../service/apiService";
 
 export const edicao = () => {
