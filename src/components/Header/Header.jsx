@@ -7,7 +7,6 @@ function Header () {
         <header className={styles.header}>
             <div className={styles.logo}>  🛒 Mini Loja </div>
             <div className={styles.date}>📅{formattedDate}</div>
-           
         </header>
     )
 }

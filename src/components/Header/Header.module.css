@@ -5,7 +5,13 @@
     background-color: #1e293b;
     color: #fff;
     padding: 1rem 2 rem;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+ justify-content: space-around;
+  bottom: auto; 
+  justify-content: space-around;
+  align-items: center;
+  
 }
 
 .logo{
