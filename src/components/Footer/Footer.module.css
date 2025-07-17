@@ -1,17 +1,15 @@
 .footer {
-  background-color: #0f172a;
-  color: #ccc;
-  padding: 1rem 2rem;
-  font-size: 0.9rem;
-  margin-top: 2rem;
-  border-top: 1px solid #334155;
-  width: 100%;
-  display: flex;
-  text-align: left;
-  padding: 1rem;
-  position: fixed;
-  bottom: 0;
-  font-weight: bold;
+  background-color: #333;
+  color: white;
+  padding: 16px;
+  text-align: center;
+  font-size: 1rem;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
+ @media (max-width:600px) {.footer{
+  font-size: 0.9rem;
+  padding: 12px;
+ }
+  
+ }

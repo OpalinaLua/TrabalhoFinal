@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
 import { editarProdutos } from "../../service/apiService";
 
-export const edicao = () => {
+export const Edicao = () => {
   const { id } = useParams();
   const [produto, setProdutos] = useState({});
   const [produtoInicial, setProdutoinicial] = useState(null);
