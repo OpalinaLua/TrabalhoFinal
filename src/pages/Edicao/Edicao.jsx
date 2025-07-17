@@ -29,15 +29,23 @@ export const edicao = () => {
     await editarProdutos(produto);
     navegacao("/");
   };
-  const handleDelete = async () =>{
-    const confirm = window.confirm(
-        "Tem certeza que deseja apagar?"
-    )
-    if(confirm)
-  }
-
-
-
-
-
+  const handleDelete = async () => {
+    const confirm = window.confirm("Tem certeza que deseja apagar?");
+    if (!produto && loading) return <p>Carregando...</p>;
+    return (
+      <div>
+        <div>
+          <button onClick={() => navegacao("/")}>Voltar</button>
+          <h1>Novo Produto</h1>
+          <FormularioP
+            produtos={produto}
+            onChange={handleChange}
+            onSubmit={handleSubmit}
+            isEditing
+            isChanged={isChanged}
+          />
+        </div>
+      </div>
+    );
+  };
 };
