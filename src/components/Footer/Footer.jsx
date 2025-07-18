@@ -12,8 +12,7 @@ export const Footer = () => {
         <p>
           <IoIosPartlySunny /> Confira a previsão do tempo para compras
           inteligentes!! <FaArrowRight color="blue" />{" "}
-          <a
-            href="https://www.climatempo.com.br/previsao-do-tempo/15-dias/cidade/317/petropolis-rj"
+          <a href="https://www.climatempo.com.br/previsao-do-tempo/15-dias/cidade/317/petropolis-rj"
             target="_blank"
           >
             {" "}

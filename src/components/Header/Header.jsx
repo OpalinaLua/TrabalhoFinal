@@ -17,9 +17,7 @@ export function Header() {
         <TiShoppingCart /> Mini Loja{" "}
       </div>
       <div className={styles.date}>
-        <IoCalendarOutline />
-        {formattedDate}
-      </div>
+        <IoCalendarOutline /> {formattedDate} </div>
       <Navbar />
     </header>
   );
