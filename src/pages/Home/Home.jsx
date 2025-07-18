@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { buscarProdutos } from "../../service/apiService";
 
-export const Home = () => {
+export const Home = ({ search }) => {
   const [produtos, setProdutos] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -20,11 +20,22 @@ export const Home = () => {
     getData();
   }, []);
 
+  const produtosFiltrados = useMemo(() => {
+    if (!search.trim()) {
+      return produtos;
+    }
+    return produtos.filter((produto) => {
+      const pesquisaMinuscula = search.toLowerCase();
+      return produto.nome.toLowerCase().includes(pesquisaMinuscula);
+      // || produto.categoria.toLowerCase().includes(pesquisaMinuscula)
+    });
+  }, [search, produtos]);
+
   if (loading) return <h1>Carregando...</h1>;
 
   return (
     <>
-      {produtos.map((produto) => (
+      {produtosFiltrados.map((produto) => (
         <p key={produto.id}>{produto.nome}</p>
       ))}
     </>
