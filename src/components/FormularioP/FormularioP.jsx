@@ -8,11 +8,11 @@ export const FormularioP = ({
   return (
     <form onSubmit={onSubmit}>
       <label>
-        titulo:
+        nome:
         <input
           type="text"
-          name="titulo"
-          value={produtos.titulo}
+          name="nome"
+          value={produtos.nome}
           onChange={onChange}
           required
         />

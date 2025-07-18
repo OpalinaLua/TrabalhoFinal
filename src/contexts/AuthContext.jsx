@@ -1,11 +1,9 @@
-import { createContext, useState } from "react";
-import { useNavigate } from "react-router";
+import { createContext, useContext, useState } from "react";
 
-export const AuthContext = createContext(null);
+const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const navigate = useNavigate();
 
   const login = (usernameOrEmail, password) => {
     if (
@@ -14,10 +12,11 @@ export const AuthProvider = ({ children }) => {
     ) {
       setUser({ name: usernameOrEmail });
       alert("Login bem-sucedido!");
-      navigate("/");
+      return true;
     } else {
       alert("Usuário ou senha incorretos");
       setUser(null);
+      return false;
     }
   };
 
@@ -35,3 +34,5 @@ export const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
+
+export const useAuth = () => useContext(AuthContext);
