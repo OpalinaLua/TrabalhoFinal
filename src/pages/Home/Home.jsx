@@ -24,7 +24,6 @@ export const Home = () => {
 
   return (
     <>
-      <h1>Home</h1>
       {produtos.map((produto) => (
         <p key={produto.id}>{produto.nome}</p>
       ))}
