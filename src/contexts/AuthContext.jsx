@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
       (usernameOrEmail === "admin" || usernameOrEmail === "admin@teste.com") &&
       password === "123"
     ) {
-      setUser({ name: usernameOrEmail });
+      setUser({ name: usernameOrEmail, id: 1 });
       alert("Login bem-sucedido!");
       return true;
     } else {
