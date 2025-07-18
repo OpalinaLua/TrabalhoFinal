@@ -2,6 +2,7 @@ import { TiShoppingCart } from "react-icons/ti";
 import styles from "./Header.module.css";
 import { IoCalendarOutline } from "react-icons/io5";
 import { Navbar } from "../Navbar/Navbar";
+import { LoginNavbar } from "../LoginNavbar/LoginNavbar";
 
 export function Header() {
   const today = new Date();
@@ -19,6 +20,7 @@ export function Header() {
       <div className={styles.date}>
         <IoCalendarOutline /> {formattedDate} </div>
       <Navbar />
+      <LoginNavbar />
     </header>
   );
 }
