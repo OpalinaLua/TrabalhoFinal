@@ -1,0 +1,16 @@
+{
+  "produtos": [
+    {
+      "id": "e61a",
+      "nome": "test Edit Nome",
+      "valor": "test edit valor 000",
+      "descricao": "test edit descricao"
+    },
+    {
+      "id": "eda4",
+      "nome": "test",
+      "valor": "20",
+      "descricao": "sfddfd"
+    }
+  ]
+}
