@@ -14,10 +14,9 @@ export const AuthProvider = ({ children }) => {
       password === "123"
     ) {
       setUser({ name: usernameOrEmail, id: 1 });
-      alert("Login bem-sucedido!");
+      localStorage.setItem("user", user);
       return true;
     } else {
-      alert("Usuário ou senha incorretos");
       setUser(null);
       return false;
     }
@@ -26,7 +25,6 @@ export const AuthProvider = ({ children }) => {
   const logado = !!user;
   const logout = () => {
     setUser(null);
-    alert("Desconectado!");
     localStorage.removeItem("user");
     navigate("/login");
   };
@@ -38,8 +36,9 @@ export const AuthProvider = ({ children }) => {
     setLoadingUser(false);
   }, [user]);
 
+  console.log(logado);
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, login, logout, logado }}>
       {children}
     </AuthContext.Provider>
   );
