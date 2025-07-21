@@ -6,6 +6,7 @@ import { Edicao } from "../pages/Edicao/Edicao";
 import { Layout } from "../components/Layout/Layout";
 import { Carrinho } from "../pages/Carrinho/Carrinho";
 import { useCallback, useState } from "react";
+import { useAuth } from "../contexts/AuthContext";
 
 const PrivateRoutes = ({ children }) => {
   const { logado } = useAuth();
@@ -29,47 +30,45 @@ export const Router = () => {
   });
 
   return (
-    <BrowserRouter>
-      <Routes>
+    <Routes>
+      <Route
+        path="/"
+        element={<Layout onClear={onClear} onSearch={onSearch} />}
+      >
+        <Route index element={<Home search={search} />} />
         <Route
-          path="/"
-          element={<Layout onClear={onClear} onSearch={onSearch} />}
-        >
-          <Route index element={<Home search={search} />} />
-          <Route
-            path="/login"
-            element={
-              <PublicRoutes>
-                <Login />
-              </PublicRoutes>
-            }
-          />
-          <Route
-            path="/cadastro"
-            element={
-              <PrivateRoutes>
-                <Cadastro />
-              </PrivateRoutes>
-            }
-          />
-          <Route
-            path="/edicao/:id"
-            element={
-              <PrivateRoutes>
-                <Edicao />
-              </PrivateRoutes>
-            }
-          />
-          <Route
-            path="/carrinho"
-            element={
-              <PrivateRoutes>
-                <Carrinho />
-              </PrivateRoutes>
-            }
-          />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+          path="/login"
+          element={
+            <PublicRoutes>
+              <Login />
+            </PublicRoutes>
+          }
+        />
+        <Route
+          path="/cadastro"
+          element={
+            <PrivateRoutes>
+              <Cadastro />
+            </PrivateRoutes>
+          }
+        />
+        <Route
+          path="/edicao/:id"
+          element={
+            <PrivateRoutes>
+              <Edicao />
+            </PrivateRoutes>
+          }
+        />
+        <Route
+          path="/carrinho"
+          element={
+            <PrivateRoutes>
+              <Carrinho />
+            </PrivateRoutes>
+          }
+        />
+      </Route>
+    </Routes>
   );
 };
