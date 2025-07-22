@@ -44,3 +44,14 @@ export const AuthProvider = ({ children }) => {
 };
 
 export const useAuth = () => useContext(AuthContext);
+
+const CartContext = createContext(null);
+
+const CartProvider = ({ children }) => {
+  const [produtos, setProdutos] = useState([
+    {
+      id: "",
+      qnt: 0,
+    },
+  ]);
+};
