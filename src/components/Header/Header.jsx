@@ -35,26 +35,7 @@ export function Header({ onSearch, onClear }) {
         <TiShoppingCart /> Mini Loja{" "}
       </div>
       <div className={styles.date}>
-        <IoCalendarOutline />
-        {formattedDate}
-      </div>
-      <div className={styles.formContainer}>
-        <form className={styles.form} onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Pesquisar produtos..."
-            value={searchValue}
-            onChange={handleChange}
-            className={styles.input}
-          />
-          <button type="submit" className={styles.button}>
-            Pesquisar
-          </button>
-          <button type="button" onClick={onClear} className={styles.button}>
-            Limpar
-          </button>
-        </form>
-      </div>
+        <IoCalendarOutline /> {formattedDate} </div>
       <Navbar />
       <LoginNavbar />
     </header>
