@@ -41,6 +41,25 @@ export const Navbar = () => {
           )
         }
       </NavLink>
+      <NavLink
+        to="/formCompras"
+        className={({ isActive }) => (isActive ? "link-ativo" : "")}
+      >
+        {({ isActive }) =>
+          isActive ? (
+            <div
+              style={{
+                display: "flex",
+              }}
+            >
+              <ShoppingCart />
+              compras
+            </div>
+          ) : (
+            "compras"
+          )
+        }
+      </NavLink>
     </>
   );
 };
