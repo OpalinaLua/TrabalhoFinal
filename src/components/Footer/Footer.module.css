@@ -1,5 +1,5 @@
 .footer {
-  background: url(https://img.freepik.com/fotos-premium/borrao-abstrato-e-shopping-desfocado-e-loja-de-varejo-para-plano-de-fundo_1339-165823.jpg);
+  background-color: rgb(240, 193, 240);
   color: black;
   padding: 16px;
   text-align: center;
@@ -7,9 +7,9 @@
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
- @media (max-width:600px) {.footer{
-  font-size: 0.9rem;
-  padding: 12px;
- }
-  
- }
+@media (max-width: 600px) {
+  .footer {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+}
