@@ -4,7 +4,8 @@
       "id": "e61a",
       "nome": "test Edit Nome",
       "valor": "20",
-      "descricao": "test edit descricao"
+      "descricao": "test edit descricao",
+      "image": ""
     },
     {
       "id": "eda4",
@@ -27,7 +28,13 @@
           "qtd": 1
         }
       ],
-      "total": 40
+      "total": 40,
+      "pagamento": {
+        "name": "",
+        "cardNumber": "",
+        "expiry": "",
+        "cvv": ""
+      }
     }
   ]
 }

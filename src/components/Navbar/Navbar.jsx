@@ -18,7 +18,7 @@ export const Navbar = () => {
                   display: "flex",
                 }}
               >
-                <House /> Início
+                <House /> Início!
               </div>
             ) : (
               "Início"
@@ -48,6 +48,6 @@ export const Navbar = () => {
         </NavLink>
           </div>
       </div>
-     </>
-   )
-  }
+    </>
+  );
+};
