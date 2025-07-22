@@ -1,92 +1,113 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Carrinho = () => {
-  const [allProducts, setAllProducts] = useState([]);
-  const [total, setTotal] = useState(0);
-  const [countProducts, setCountProducts] = useState(0);
+  const [cartItems, setCartItems] = useState(
+    localStorage.getItem("cartItems")
+      ? JSON.parse(localStorage.getItem("cartItems"))
+      : []
+  );
 
-  const onAddProduct = (productToAdd) => {
-    const productExists = allProducts.find(
-      (item) => item.id === productToAdd.id
-    );
+  const addToCart = (item) => {
+    const isItemInCart = cartitems.find((cartItem) => cartItem.id === item.id);
 
-    if (productExists) {
-      const updatedProducts = allProducts.map((item) =>
-        item.id === productToAdd.id
-          ? { ...item, quantity: item.quantity + 1 }
-          : item
+    if (isItemInCart) {
+      setCartItems(
+        cartItems.map((cartItem) =>
+          cartItem.id === item.id
+            ? { ...cartItem, quantity: cartItem.quantity + 1 }
+            : cartItem
+        )
       );
-      setAllProducts(updatedProducts);
     } else {
-      setAllProducts([...allProducts, { ...productToAdd, quantity: 1 }]);
+      setCartItems([...cartItems, { ...item, quantity: 1 }]);
     }
-
-    setTotal((prevTotal) => prevTotal + productToAdd.price);
-    setCountProducts((prevCount) => prevCount + 1);
   };
 
-  const onDeleteProduct = (productToRemove) => {
-    const productInCart = allProducts.find(
-      (item) => item.id === productToRemove.id
-    );
+  const removeFromCart = (item) => {
+    const isItemInCart = cartItems.find((cartItem) => cartItem.id === item.id);
 
-    if (productInCart.quantity > 1) {
-      const updatedProducts = allProducts.map((item) =>
-        item.id === productToRemove.id
-          ? { ...item, quantity: item.quantity - 1 }
-          : item
-      );
-      setAllProducts(updatedProducts);
+    if (isItemInCart.quantity === 1) {
+      setCartItems(cartItems.filter((cartItem) => cartItem.id !== item.id));
     } else {
-      const filteredProducts = allProducts.filter(
-        (item) => item.id !== productToRemove.id
+      setCartItems(
+        cartItems.map((cartItem) =>
+          cartItem.id === item.id
+            ? { ...cartItem, quantity: cartItem.quantity - 1 }
+            : cartItem
+        )
       );
-      setAllProducts(filteredProducts);
     }
-
-    setTotal((prevTotal) => prevTotal - productToRemove.price);
-    setCountProducts((prevCount) => prevCount - 1);
   };
 
-  const onCleanCart = () => {
-    setAllProducts([]);
-    setTotal(0);
-    setCountProducts(0);
+  const clearCart = () => {
+    setCartItems([]);
   };
+
+  const getCartTotal = () => {
+    return cartItem.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
+  };
+
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
+
+  useEffect(() => {
+    const cartItems = localStorage.getItem("cartItems");
+    if (cartItems) {
+      setCartItems(JSON.parse(cartItems));
+    }
+  }, []);
 
   return (
     <div>
-      <h1>Meu Carrinho ({countProducts} itens)</h1>
-      <button onClick={onCleanCart}>Limpar Carrinho</button>
-
-      {allProducts.length === 0 ? (
-        <p>Seu carrinho está vazio!</p>
-      ) : (
-        <div>
-          {allProducts.map((product) => (
-            <div
-              key={product.id}
-              style={{
-                border: "1px solid #ccc",
-                margin: "10px",
-                padding: "10px",
-              }}
-            >
-              <h3>{product.name}</h3>
-              <p>Preço unitário: R${product.price.toFixed(2)}</p>
-              <p>Quantidade: {product.quantity}</p>
-              <p>Subtotal: R${(product.price * product.quantity).toFixed(2)}</p>
-              <button onClick={() => onDeleteProduct(product)}>
-                Remover 1
-              </button>
-              {}
+      <h1>Carrinho</h1>
+      <div>
+        {cartItems.map((item) => (
+          <div key={item.id}>
+            <div>
+              <img src={item.thumbnail} alt={item.title} />
+              <div>
+                <h1>{item.title}</h1>
+                <p>{item.price}</p>
+              </div>
             </div>
-          ))}
-          <h2>Total do Carrinho: R${total.toFixed(2)}</h2>
+            <div>
+              <button
+                onClick={() => {
+                  addToCart(item);
+                }}
+              >
+                +
+              </button>
+              <p>{item.quantity}</p>
+              <button
+                onClick={() => {
+                  removeFromCart(item);
+                }}
+              >
+                -
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+      {cartItems.length > 0 ? (
+        <div>
+          <h1>Total: ${getCartTotal()}</h1>
+          <button
+            onClick={() => {
+              clearCart();
+            }}
+          >
+            Limpar carrinho
+          </button>
         </div>
+      ) : (
+        <h1>Seu Carrinho está vazio</h1>
       )}
-      {}
-      {}
     </div>
   );
 };
