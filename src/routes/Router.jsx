@@ -5,6 +5,7 @@ import { Cadastro } from "../pages/Cadastro/Cadastro";
 import { Edicao } from "../pages/Edicao/Edicao";
 import { Layout } from "../components/Layout/Layout";
 import { Carrinho } from "../pages/Carrinho/Carrinho";
+import PaymentForm from "../pages/FormCompra/FormCompra";
 import { useCallback, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 
@@ -65,6 +66,14 @@ export const Router = () => {
           element={
             <PrivateRoutes>
               <Carrinho />
+            </PrivateRoutes>
+          }
+        />
+        <Route
+          path="/formCompras"
+          element={
+            <PrivateRoutes>
+              <PaymentForm />
             </PrivateRoutes>
           }
         />
