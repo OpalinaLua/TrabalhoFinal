@@ -6,9 +6,10 @@ export const Navbar = () => {
   return (
     <>
       <div className={styles.conteiner}>
+        <div>
         <NavLink
           to="/"
-          className={({ isActive }) => (isActive ? "link-ativo" : "")}
+          className={({ isActive }) => (isActive ? styles.linkAtivo : styles.link)}
         >
           {({ isActive }) =>
             isActive ? (
@@ -24,9 +25,11 @@ export const Navbar = () => {
             )
           }
         </NavLink>
+        </div>
+        <div className={styles.conteiner2}>
         <NavLink
           to="/carrinho"
-          className={({ isActive }) => (isActive ? "link-ativo" : "")}
+          className={({ isActive }) => (isActive ? styles.linkAtivo : styles.link)}
         >
           {({ isActive }) =>
             isActive ? (
@@ -43,6 +46,7 @@ export const Navbar = () => {
             )
           }
         </NavLink>
+          </div>
       </div>
      </>
    )

@@ -4,14 +4,21 @@ border-top: 1px solid rgba(180, 17, 180, 0.8);
 color: black;
 padding: 2rem;
 margin-top: 2rem;
-background: linear-gradient(50deg, #ecf0f1, #9317a6);
-text-align: left;
-justify-content: end;  
-    
+background: linear-gradient(50deg, #ecf0f1, #f3a9ff);
+justify-content: end;     
 
 }
 
+.frase{
+  margin-bottom: 0.5rem;
+  text-align: center;
+  }
 
+.frase2{
+  margin-inline-end: 2rem;
+  text-align: left;
+
+}
 
 @media (max-width: 600px) {
   .footer {
