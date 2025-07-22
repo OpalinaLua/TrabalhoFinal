@@ -3,7 +3,7 @@
     {
       "id": "e61a",
       "nome": "test Edit Nome",
-      "valor": "test edit valor 000",
+      "valor": "20",
       "descricao": "test edit descricao"
     },
     {
@@ -11,6 +11,23 @@
       "nome": "test",
       "valor": "20",
       "descricao": "sfddfd"
+    }
+  ],
+  "compras": [
+    {
+      "id": "eba5",
+      "idUsuario": 1,
+      "produtos": [
+        {
+          "id": "e61a",
+          "qtd": 1
+        },
+        {
+          "id": "eda4",
+          "qtd": 1
+        }
+      ],
+      "total": 40
     }
   ]
 }
