@@ -17,7 +17,7 @@ export const Navbar = () => {
                   display: "flex",
                 }}
               >
-                <House /> Iníció
+                <House /> Início!
               </div>
             ) : (
               "Início"
