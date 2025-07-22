@@ -1,12 +1,18 @@
 .footer {
-  background-color: rgb(240, 193, 240);
-  color: black;
-  padding: 16px;
-  text-align: center;
-  font-size: 1rem;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+backdrop-filter: blur(10px);
+border-top: 1px solid rgba(180, 17, 180, 0.8);
+color: black;
+padding: 2rem;
+margin-top: 2rem;
+background: linear-gradient(50deg, #ecf0f1, #9317a6);
+text-align: left;
+justify-content: end;  
+    
+
 }
+
+
+
 @media (max-width: 600px) {
   .footer {
     font-size: 0.9rem;
