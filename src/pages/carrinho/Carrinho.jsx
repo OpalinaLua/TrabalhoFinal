@@ -10,10 +10,10 @@ export const Carrinho = () => {
         {cartItems.map((item) => (
           <div key={item.id}>
             <div>
-              <img src={item.thumbnail} alt={item.title} />
+              <img src={item.imagem} alt={item.name} />
               <div>
-                <h1>{item.title}</h1>
-                <p>{item.price}</p>
+                <h1>{item.nome}</h1>
+                <p>{item.valor}</p>
               </div>
             </div>
             <div>
