@@ -38,7 +38,7 @@ export const Carrinho = () => {
       </div>
       {cartItems.length > 0 ? (
         <div>
-          <h1>Total: ${getCartTotal()}</h1>
+          <h1>Total: R${getCartTotal()}</h1>
           <button
             onClick={() => {
               clearCart();

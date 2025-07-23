@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { buscarProdutos } from "../../service/apiService";
 import styles from "./Cartao.module.css";
+import { useNavigate } from "react-router";
+import { useCart } from "../../contexts/CartContext";
 
 export const Cartao = () => {
   const [produtos, setProdutos] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { addToCart } = useCart();
 
   const getData = async () => {
     try {
@@ -38,6 +41,9 @@ export const Cartao = () => {
             <p className={styles.valor}>R${produto.valor}</p>
           </div>
           <p className={styles.descricao}>{produto.descricao}</p>
+          <button onClick={() => addToCart(produto)}>
+            Adicionar ao carrinho
+          </button>
         </div>
       ))}
     </>
