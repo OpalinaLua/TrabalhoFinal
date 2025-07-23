@@ -13,7 +13,7 @@ export const Navbar = () => {
           {({ isActive }) =>
             isActive ? (
               <div>
-                <House />{"   "}Início
+                <House />{"   "} Início
               </div>
             ) : (
               "Início"

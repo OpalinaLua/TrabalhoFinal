@@ -1,6 +1,6 @@
 .header {
-  background: linear-gradient(50deg, #ecf0f1, #f3a9ff);
-  border-bottom: 1px solid rgba(180, 17, 180, 0.8);
+  background: linear-gradient(30deg, white, blue);
+  border-bottom: 1px solid rgba(3, 2, 7, 0.8);
   color: black;
   padding: 2rem;
   display: flex;
@@ -15,11 +15,15 @@
 .header h1 {
   margin: 0;
   font-size: 1.5rem;
-}
+  
+  }
 .date {
   font-size: 1rem;
   opacity: 0.8;
+  text-align: right;
+  margin-top: 5rem;
 }
+
 
 @media (max-width: 600px) {
   .header {

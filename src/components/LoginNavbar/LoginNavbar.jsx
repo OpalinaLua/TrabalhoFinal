@@ -5,6 +5,7 @@ import styles from "./LoginNavbar.module.css";
 export const LoginNavbar = () => {
   return (
     <>
+   
       <NavLink
         to="/login"
         className={({ isActive }) => (isActive ? styles.linkAtivo : styles.link)}
@@ -23,6 +24,7 @@ export const LoginNavbar = () => {
           )
         }
       </NavLink>
+     
     </>
   );
 };
