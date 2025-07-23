@@ -23,26 +23,30 @@ export function Header({ onSearch, onClear }) {
   }, []);
 
   const today = new Date();
-  
-    const formattedDate = today.toLocaleDateString
-  
-  ("pt-BR", {
+
+  const formattedDate = today.toLocaleDateString("pt-BR", {
     weekday: "long",
     day: "numeric",
     month: "long",
-      
   });
-    
+
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
         {" "}
-         <img src="DLPS.png" style={{width:'120px',height:'auto'}} alt="Nossa Logo" /> 
-         </div>
+        <img
+          src="DLPS.png"
+          style={{ width: "120px", height: "auto" }}
+          alt="Nossa Logo"
+        />
+      </div>
       <div className={styles.date}>
-        <IoCalendarOutline /> {formattedDate} </div>
-      <Navbar />
-      <LoginNavbar />
+        <IoCalendarOutline /> {formattedDate}{" "}
+      </div>
+      <div className={styles.botoes}>
+        <Navbar />
+        <LoginNavbar />
+      </div>
     </header>
   );
 }

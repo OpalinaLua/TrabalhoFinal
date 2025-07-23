@@ -1,38 +1,32 @@
 .footer {
-backdrop-filter: blur(10px);
-border-top: 1px solid rgba(8, 8, 8, 0.8);
-color: black;
-padding: 1rem;
-background: linear-gradient(5deg, white, blue);
-justify-content: end;  
-display: flex;  
-flex-direction: column;
- 
-
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(8, 8, 8, 0.8);
+  color: black;
+  padding: 1rem;
+  background: linear-gradient(5deg, white, blue);
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.frase{
+.frase {
   margin-top: 10px;
   font-size: 0.9rem;
   opacity: 0.8;
-  text-align: left;
+  text-align: center;
   font-family: monospace;
   color: rgb(50, 48, 48);
   margin: 6px 0;
-  align-items: end;
+  align-items: center;
+}
 
-   
-  }
-
-.tempo{
+.tempo {
   margin-inline-start: 2rem;
   text-align: right;
-  margin-bottom: 2rem ;
+  margin-bottom: 2rem;
   opacity: 0.8;
   font-size: 15px;
   font-family: monospace;
-
-
 }
 
 @media (max-width: 600px) {
