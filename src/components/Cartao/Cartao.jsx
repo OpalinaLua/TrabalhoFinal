@@ -36,12 +36,12 @@ export const Cartao = () => {
               className={styles.imagem}
             />
           </div>
-          <div className={styles.cartao2}>
+          <div className={styles.caixa}>
             <p className={styles.nome}>{produto.nome}</p>
             <p className={styles.valor}>R${produto.valor}</p>
           </div>
           <p className={styles.descricao}>{produto.descricao}</p>
-          <button onClick={() => addToCart(produto)}>
+          <button className={styles.botao} onClick={() => addToCart(produto)}>
             Adicionar ao carrinho
           </button>
         </div>
