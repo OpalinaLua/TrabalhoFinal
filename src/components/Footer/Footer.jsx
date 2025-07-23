@@ -26,7 +26,7 @@ export const Footer = () => {
         CNPJ 14.000.000/0001-00 <br></br> Rua Bingen, n°130, Bingen,Petrópolis/RJ -  CEP 25680-270</div>
         
           {weather ? (
-            <p className={styles.tempo}>Tempo agora:{weather.temperatura} °C | {weather.weathercode === 0 ? 'Céu limpo' : 'Verifique previsão'}</p>
+            <p className={styles.tempo}>Tempo agora:{weather.temperature} °C </p>
           ) : (
             <p>Carregando previsão do tempo...</p>
           )}
