@@ -1,37 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
-.linkAtivo{ 
-    padding: 8px 15px;
-    background: linear-gradient(50deg, #ecf0f1, #9317a6);
-    color: rgb(32, 17, 17);
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: transform 0.5s ease;
-    border: 5px solid #1e0808;
-    font-family: Embed code;
-     
+
+
+
+.link {
+  font-size:20px;
+  font-family: Embed code;
+  width:140px;
+  height:50px;
+  border-width:1px;
+  color:#fff;
+  border-color:#4e6096;
+  border-top-left-radius:10px;
+  border-top-right-radius:10px;
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
+  box-shadow: 0px 0px 0px 2px #9fb4f2;
+  text-shadow: 0px 1px 0px #283966;
+  background:linear-gradient(rgb(120, 146, 194), #476e9e);
+   text-decoration: none;
+   text-align: center;
+   font-weight:bold;
+  
+
+}
+
+
+.link:hover {
+  background: linear-gradient(#476e9e, rgb(120, 146, 194));
+  transform: scale(1.1);
+}
+            
+.linkAtivo {
+   font-size:20px;
+  font-family: Embed code;
+  width:140px;
+  height:50px;
+  border-width:1px;
+  color:#fff;
+  border-color:#599bb3;
+  font-weight:bold;
+  border-top-left-radius:8px;
+  border-top-right-radius:8px;
+  border-bottom-left-radius:8px;
+  border-bottom-right-radius:8px;
+  box-shadow: 0px 10px 14px -7px #276873;
+  text-shadow: 0px 1px 0px #3d768a;
+  background:linear-gradient(#599bb3, #408c99);
+   text-decoration: none;
+   text-align: center;
+   margin-bottom: 2rem;
+
 }
 
 .linkAtivo:hover {
-    background: linear-gradient(50deg, white, pink);
-  }
-  
-
-.link {
-    padding: 8px 15px;
-    background: linear-gradient(50deg, purple, pink);
-    color: rgb(32, 17, 17);
-    border: none;
-    border-radius: 1px;
-    cursor: pointer;
-    transition: transform 0.5s ease;
-    border: 1px solid #1e0808;
-    text-decoration: none;
-    font-family: Embed code;
-  }
-  
-  .link:hover {
-    background: linear-gradient(50deg, white, rgb(170, 98, 170));
-    transform: scale(1.1);
-  }
-  
+background: linear-gradient(#408c99, #599bb3); 
+  transform: scale(1.1);
+}

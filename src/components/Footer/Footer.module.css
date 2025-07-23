@@ -1,22 +1,37 @@
 .footer {
 backdrop-filter: blur(10px);
-border-top: 1px solid rgba(180, 17, 180, 0.8);
+border-top: 1px solid rgba(8, 8, 8, 0.8);
 color: black;
-padding: 2rem;
-margin-top: 2rem;
-background: linear-gradient(50deg, #ecf0f1, #f3a9ff);
-justify-content: end;     
+padding: 1rem;
+background: linear-gradient(5deg, white, blue);
+justify-content: end;  
+display: flex;  
+flex-direction: column;
+ 
 
 }
 
 .frase{
-  margin-bottom: 0.5rem;
-  text-align: center;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  text-align: left;
+  font-family: monospace;
+  color: rgb(50, 48, 48);
+  margin: 6px 0;
+  align-items: end;
+
+   
   }
 
-.frase2{
-  margin-inline-end: 2rem;
-  text-align: left;
+.tempo{
+  margin-inline-start: 2rem;
+  text-align: right;
+  margin-bottom: 2rem ;
+  opacity: 0.8;
+  font-size: 15px;
+  font-family: monospace;
+
 
 }
 
