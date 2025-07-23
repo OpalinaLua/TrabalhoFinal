@@ -1,0 +1,45 @@
+.cartao {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 5px;
+  padding: 5px;
+  background-color: MistyRose;
+  border-color: rgb(216, 193, 190) 3px;
+  border-radius: 10px;
+  box-shadow: rgb(207, 206, 206) 4px 4px 4px 1.5px;
+  position: relative;
+}
+.imgConteiner {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: rgb(154, 183, 236);
+  border: none;
+  border-radius: 10px;
+  margin: 3px;
+}
+.imagem {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+}
+.cartao2 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.nome {
+  font-size: x-large;
+}
+.valor {
+  display: flex;
+  font-size: large;
+}
+.descricao {
+  font-size: medium;
+}

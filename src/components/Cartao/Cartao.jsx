@@ -22,12 +22,19 @@ export const Cartao = () => {
   }, []);
   if (loading) return <h1>Carregando...</h1>;
   return (
-    <div className={styles.produto}>
-      <>
-        {produtos.map((produto) => (
-          <p key={produto.id}>{produto.nome}</p>
-        ))}
-      </>
-    </div>
+    <>
+      {produtos.map((produto) => (
+        <div key={produto.id} className={styles.cartao}>
+          <div className={styles.imgConteiner}>
+            <img className={styles.imagem}>{produto.imagem}</img>
+          </div>
+          <div className={styles.cartao2}>
+            <p className={styles.nome}>{produto.nome}</p>
+            <p className={styles.valor}>R${produto.valor}</p>
+          </div>
+          <p className={styles.descricao}>{produto.descricao}</p>
+        </div>
+      ))}
+    </>
   );
 };
