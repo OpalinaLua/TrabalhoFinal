@@ -37,7 +37,7 @@ export function Header({ onSearch, onClear }) {
     <header className={styles.header}>
       <div className={styles.logo}>
         {" "}
-         <img src="DLPS.png" style={{width:'150px',height:'auto'}} alt="Nossa Logo" /> 
+         <img src="DLPS.png" style={{width:'120px',height:'auto'}} alt="Nossa Logo" /> 
          </div>
       <div className={styles.date}>
         <IoCalendarOutline /> {formattedDate} </div>

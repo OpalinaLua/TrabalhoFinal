@@ -3,14 +3,15 @@
   border-bottom: 1px solid rgba(3, 2, 7, 0.8);
   color: black;
   padding: 2rem;
+  margin-bottom: 1.5rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: center;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  align-items: end;
+  font-family:monospace;
   bottom: auto;
-  width: 100%;
+  
+  
 }
 .header h1 {
   margin: 0;
