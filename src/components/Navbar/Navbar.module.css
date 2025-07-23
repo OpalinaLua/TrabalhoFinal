@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 .conteiner {
   display: flex;
+  gap: 5px;
+  padding: 8px;
+  font-family: Embed code;
 }
 .linkAtivo{ 
   padding: 8px 15px;
@@ -10,13 +14,12 @@
   cursor: pointer;
   transition: transform 0.5s ease;
   border: 1px solid #1e0808;
-  justify-content: space-between;  
-  
+  justify-content: space-between;
+  text-decoration: none;
 }
 
 .linkAtivo:hover {
   background: linear-gradient(50deg, white, pink);
-  animation: girar 2s infinite linear;
 }
 
 .link {
@@ -26,12 +29,12 @@
   border: none;
   border-radius: 1px;
   cursor: pointer;
-  transition: transform 0.5s ease;
+  transition: all 0.5s ease;
   border: 1px solid #1e0808;
+  text-decoration: none;
 }
 
 .link:hover {
   background: linear-gradient(50deg, white, rgb(170, 98, 170));
-  animation: girar 2s infinite linear;
-
+  transform: scale(1.1);
 }

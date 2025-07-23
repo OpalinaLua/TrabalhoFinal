@@ -6,38 +6,27 @@ export const Navbar = () => {
   return (
     <>
       <div className={styles.conteiner}>
-        <div>
         <NavLink
           to="/"
           className={({ isActive }) => (isActive ? styles.linkAtivo : styles.link)}
         >
           {({ isActive }) =>
             isActive ? (
-              <div
-                style={{
-                  display: "flex",
-                }}
-              >
-                <House /> Início!
+              <div>
+                <House />{"   "}Início
               </div>
             ) : (
               "Início"
             )
           }
         </NavLink>
-        </div>
-        <div className={styles.conteiner2}>
         <NavLink
           to="/carrinho"
           className={({ isActive }) => (isActive ? styles.linkAtivo : styles.link)}
         >
           {({ isActive }) =>
             isActive ? (
-              <div
-                style={{
-                  display: "flex",
-                }}
-              >
+              <div>
                 <ShoppingCart />
                 Carrinho
               </div>
@@ -46,7 +35,6 @@ export const Navbar = () => {
             )
           }
         </NavLink>
-          </div>
       </div>
     </>
   );

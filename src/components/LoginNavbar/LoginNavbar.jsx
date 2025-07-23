@@ -7,7 +7,7 @@ export const LoginNavbar = () => {
     <>
       <NavLink
         to="/login"
-        className={({ isActive }) => (isActive ? "link-ativo" : "")}
+        className={({ isActive }) => (isActive ? styles.linkAtivo : styles.link)}
       >
         {({ isActive }) =>
           isActive ? (
