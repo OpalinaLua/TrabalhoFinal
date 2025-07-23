@@ -19,6 +19,7 @@ export const Cartao = () => {
       setLoading(false);
     }
   };
+  console.log(produtos);
 
   useEffect(() => {
     getData();
