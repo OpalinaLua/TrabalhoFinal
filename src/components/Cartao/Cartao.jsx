@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { buscarProdutos } from "../../service/apiService";
 import styles from "./Cartao.module.css";
+import { useNavigate } from "react-router";
+import { useCart } from "../../contexts/CartContext";
 
 export const Cartao = () => {
   const [produtos, setProdutos] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { addToCart } = useCart();
 
   const getData = async () => {
     try {
@@ -26,13 +29,20 @@ export const Cartao = () => {
       {produtos.map((produto) => (
         <div key={produto.id} className={styles.cartao}>
           <div className={styles.imgConteiner}>
-            <img className={styles.imagem}>{produto.imagem}</img>
+            <img
+              src={produto.imagem}
+              alt={produto.nome}
+              className={styles.imagem}
+            />
           </div>
           <div className={styles.cartao2}>
             <p className={styles.nome}>{produto.nome}</p>
             <p className={styles.valor}>R${produto.valor}</p>
           </div>
           <p className={styles.descricao}>{produto.descricao}</p>
+          <button onClick={() => addToCart(produto)}>
+            Adicionar ao carrinho
+          </button>
         </div>
       ))}
     </>

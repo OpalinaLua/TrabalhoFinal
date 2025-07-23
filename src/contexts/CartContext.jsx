@@ -10,7 +10,7 @@ export const CartProvider = ({ children }) => {
   );
 
   const addToCart = (item) => {
-    const isItemInCart = cartitems.find((cartItem) => cartItem.id === item.id);
+    const isItemInCart = cartItems.find((cartItem) => cartItem.id === item.id);
 
     if (isItemInCart) {
       setCartItems(
@@ -46,7 +46,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const getCartTotal = () => {
-    return cartItem.reduce(
+    return cartItems.reduce(
       (total, item) => total + item.valor * item.quantity,
       0
     );
