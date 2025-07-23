@@ -1,33 +1,40 @@
 import { useNavigate } from "react-router";
 import { useCart } from "../../contexts/CartContext";
+import styles from "./Carrinho.module.css";
 
 export const Carrinho = () => {
   const { cartItems, addToCart, removeFromCart, clearCart, getCartTotal } =
     useCart();
   const navigate = useNavigate();
   return (
-    <div>
-      <h1>Carrinho</h1>
+    <div className={styles.conteiner}>
+      <h1 className={styles.titulo}>Carrinho</h1>
       <div>
         {cartItems.map((item) => (
           <div key={item.id}>
-            <div>
-              <img src={item.imagem} alt={item.name} />
-              <div>
-                <h1>{item.nome}</h1>
-                <p>{item.valor}</p>
-              </div>
+            <div className={styles.imgcaixa}>
+              <img
+                className={styles.imagem}
+                src={item.imagem}
+                alt={item.name}
+              />
             </div>
-            <div>
+            <div className={styles.caixaNV}>
+              <h1 className={styles.nome}>{item.nome}</h1>
+              <p className={styles.valor}>{item.valor}</p>
+            </div>
+            <div className={styles.caixaBQ}>
               <button
+                className={styles.mais}
                 onClick={() => {
                   addToCart(item);
                 }}
               >
                 +
               </button>
-              <p>{item.quantity}</p>
+              <p className={styles.quantidade}>{item.quantity}</p>
               <button
+                className={styles.menos}
                 onClick={() => {
                   removeFromCart(item);
                 }}
@@ -39,14 +46,15 @@ export const Carrinho = () => {
         ))}
       </div>
       {cartItems.length > 0 ? (
-        <div>
-          <h1>Total: R${getCartTotal()}</h1>
+        <div className={styles.caixaT}>
+          <h1 className={styles.total}>Total: R${getCartTotal()}</h1>
           <div>
             <button onClick={() => navigate("/formCompras")}>
               Finalizar compra
             </button>
           </div>
           <button
+            className={styles.limpar}
             onClick={() => {
               clearCart();
             }}
@@ -55,7 +63,7 @@ export const Carrinho = () => {
           </button>
         </div>
       ) : (
-        <h1>Seu Carrinho está vazio</h1>
+        <h1 className={styles.vazio}>Seu Carrinho está vazio</h1>
       )}
     </div>
   );
