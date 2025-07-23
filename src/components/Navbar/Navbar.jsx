@@ -8,16 +8,12 @@ export const Navbar = () => {
       <div className={styles.conteiner}>
         <NavLink
           to="/"
-          className={({ isActive }) => (isActive ? "link-ativo" : "")}
+          className={({ isActive }) => (isActive ? styles.linkAtivo : styles.link)}
         >
           {({ isActive }) =>
             isActive ? (
-              <div
-                style={{
-                  display: "flex",
-                }}
-              >
-                <House /> Início!
+              <div>
+                <House />{"   "}Início
               </div>
             ) : (
               "Início"
@@ -26,15 +22,11 @@ export const Navbar = () => {
         </NavLink>
         <NavLink
           to="/carrinho"
-          className={({ isActive }) => (isActive ? "link-ativo" : "")}
+          className={({ isActive }) => (isActive ? styles.linkAtivo : styles.link)}
         >
           {({ isActive }) =>
             isActive ? (
-              <div
-                style={{
-                  display: "flex",
-                }}
-              >
+              <div>
                 <ShoppingCart />
                 Carrinho
               </div>

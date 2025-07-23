@@ -1,7 +1,8 @@
 .header {
-  background-color: rgb(240, 193, 240);
+  background: linear-gradient(50deg, #ecf0f1, #f3a9ff);
+  border-bottom: 1px solid rgba(180, 17, 180, 0.8);
   color: black;
-  padding: 1rem;
+  padding: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
