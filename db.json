@@ -3,14 +3,14 @@
     {
       "id": "e61a",
       "nome": "Fatia de Torta",
-      "valor": " 15,00",
+      "valor": 15.0,
       "descricao": "Sabor do dia Maracujá",
       "imagem": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEifjsuz5H2sd5NJkKS5_roqVVI2j-_RtLcjZ51nipr10KsD-tJLKZ6sYXOb58kE4PVHMx_f8tkhweVNwJAhWpwWIB8GoLxEuGyHKxfif95mRHF9pjd16gsFFL_PCZSQ9w_G8L1nuuB0uwvhfWrbwHLu4HXSd0WwLFkk5ipxcTRUCw-A0KN7o1tsP7uu/s2000/receita-de-torta-de-maracuja-3.jpg"
     },
     {
       "id": "eda4",
       "nome": "Pizza Média",
-      "valor": "50,00",
+      "valor": 50.0,
       "descricao": "Mussarela, tomate e orégano",
       "imagem": "https://pizzafacil.ind.br/website2018/wp-content/uploads/2018/04/pizza-mussarela-883x395.jpg"
     }

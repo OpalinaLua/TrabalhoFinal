@@ -6,11 +6,10 @@ import styles from "./Layout.module.css";
 export const Layout = ({ onSearch, onClear }) => {
   return (
     <>
-      <div className={styles.pageContainer}>
-        <div className={styles.content}>
+      <div>
+        <div>
           <Header onClear={onClear} onSearch={onSearch} />
         </div>
-
         <Outlet />
         <Footer />
       </div>

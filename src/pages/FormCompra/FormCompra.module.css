@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 10rem;
+  background-color: rgb(154, 183, 236);
+  width: 40%;
+  height: 400px;
+  border-radius: 12px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 6px;
+}
+
+.titulo {
+  font-family: Embed code;
+}
+
+.input {
+  border: 1px solid black;
+  border-radius: 4px;
+  background-color: rgb(113, 139, 187);
+}
