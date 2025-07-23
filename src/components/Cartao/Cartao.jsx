@@ -16,6 +16,7 @@ export const Cartao = () => {
       setLoading(false);
     }
   };
+  console.log(produtos);
 
   useEffect(() => {
     getData();
@@ -26,7 +27,11 @@ export const Cartao = () => {
       {produtos.map((produto) => (
         <div key={produto.id} className={styles.cartao}>
           <div className={styles.imgConteiner}>
-            <img className={styles.imagem}>{produto.imagem}</img>
+            <img
+              src={produto.imagem}
+              alt={produto.nome}
+              className={styles.imagem}
+            />
           </div>
           <div className={styles.cartao2}>
             <p className={styles.nome}>{produto.nome}</p>

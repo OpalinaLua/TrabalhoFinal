@@ -5,26 +5,24 @@ import styles from "./LoginNavbar.module.css";
 export const LoginNavbar = () => {
   return (
     <>
-   
-      <NavLink
-        to="/login"
-        className={({ isActive }) => (isActive ? styles.linkAtivo : styles.link)}
-      >
-        {({ isActive }) =>
-          isActive ? (
-            <div
-              style={{
-                display: "flex",
-              }}
-            >
-              <LogIn /> Login
-            </div>
-          ) : (
-            "Login"
-          )
-        }
-      </NavLink>
-     
+      <div className={styles.conteiner}>
+        <NavLink
+          to="/login"
+          className={({ isActive }) =>
+            isActive ? styles.linkAtivo : styles.link
+          }
+        >
+          {({ isActive }) =>
+            isActive ? (
+              <>
+                <LogIn /> Login
+              </>
+            ) : (
+              "Login"
+            )
+          }
+        </NavLink>
+      </div>
     </>
   );
 };
