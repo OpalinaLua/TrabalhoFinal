@@ -5,7 +5,6 @@ import {
   deletarProdutos,
   editarProdutos,
 } from "../../service/apiService";
-import { FormularioP } from "../../components/FormularioP/FormularioP";
 
 export const Edicao = () => {
   const { id } = useParams();
@@ -61,13 +60,6 @@ export const Edicao = () => {
         <button onClick={handleDelete}>Deletar </button>
       </div>
       <h1>Editar Produtos</h1>
-      <FormularioP
-        produtos={produto}
-        onChange={handleChange}
-        onSubmit={handleSubmit}
-        isEditing
-        isChanged={isChanged}
-      />
     </div>
   );
 };

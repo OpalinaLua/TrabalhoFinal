@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import { criarProdutos } from "../../service/apiService";
-import { FormularioP } from "../../components/FormularioP/FormularioP";
 
 export const Cadastro = () => {
   const navegacao = useNavigate();
@@ -32,12 +31,6 @@ export const Cadastro = () => {
     <div>
       <button onClick={() => navegacao("/")}>Voltar</button>
       <h1>Novo Produto</h1>
-      <FormularioP
-        produtos={produto}
-        onChange={handleChange}
-        onSubmit={handleSubmit}
-        isChanged={isChanged}
-      />
     </div>
   );
 };
