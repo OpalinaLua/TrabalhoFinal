@@ -41,23 +41,6 @@ export const Navbar = () => {
           }
         </NavLink>
         <NavLink
-          to="/edicao"
-          className={({ isActive }) =>
-            isActive ? styles.linkAtivo : styles.link
-          }
-        >
-          {({ isActive }) =>
-            isActive ? (
-              <>
-                <ShoppingCart />
-                Editar produtos
-              </>
-            ) : (
-              "Editar produtos"
-            )
-          }
-        </NavLink>
-        <NavLink
           to="/cadastro"
           className={({ isActive }) =>
             isActive ? styles.linkAtivo : styles.link
@@ -67,10 +50,10 @@ export const Navbar = () => {
             isActive ? (
               <>
                 <ShoppingCart />
-                Cadastrar produtos
+                Cadastro
               </>
             ) : (
-              "Cadastrar produtos"
+              "Cadastro"
             )
           }
         </NavLink>
