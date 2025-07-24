@@ -50,10 +50,10 @@ export const Navbar = () => {
             isActive ? (
               <>
                 <ShoppingCart />
-                Cadastrar produtos
+                Cadastro
               </>
             ) : (
-              "Cadastrar produtos"
+              "Cadastro"
             )
           }
         </NavLink>
