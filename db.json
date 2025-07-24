@@ -31,6 +31,13 @@
       "nome": "refrigerante",
       "valor": "10",
       "descricao": "unidade"
+    },
+    {
+      "id": "4640",
+      "nome": "asd",
+      "valor": "10",
+      "descricao": "unidade",
+      "imagem": "https://st3.depositphotos.com/1063437/13933/i/1600/depositphotos_139337744-stock-photo-bottles-of-assorted-coca-cola.jpg"
     }
   ],
   "compras": [

@@ -53,13 +53,13 @@ export const FormularioP = ({
           </div>
 
           <div className={styles.inputConteiner}>
-            <label className={styles.titulo} htmlFor="urlImage">
+            <label className={styles.titulo} htmlFor="imagem">
               URL Imagem:{" "}
             </label>
             <input
               className={styles.input}
               type="text"
-              name="urlImagem"
+              name="imagem"
               value={produtos.imagem}
               onChange={onChange}
               required
