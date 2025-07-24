@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { buscarProdutos } from "../../service/apiService";
 import styles from "./Cartao.module.css";
 import { useCart } from "../../contexts/CartContext";
+import { Link } from "react-router";
 
 export const Cartao = () => {
   const [produtos, setProdutos] = useState([]);
@@ -42,6 +43,7 @@ export const Cartao = () => {
           <button className={styles.botao} onClick={() => addToCart(produto)}>
             Adicionar ao carrinho
           </button>
+          <Link to={`/edicao/${produto.id}`}>Editar</Link>
         </div>
       ))}
     </>

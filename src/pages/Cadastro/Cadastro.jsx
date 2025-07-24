@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import { criarProdutos } from "../../service/apiService";
+import { FormularioP } from "../../components/FormularioP/FormularioP";
 
 export const Cadastro = () => {
   const navegacao = useNavigate();

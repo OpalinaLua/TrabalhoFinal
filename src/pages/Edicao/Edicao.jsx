@@ -5,6 +5,8 @@ import {
   deletarProdutos,
   editarProdutos,
 } from "../../service/apiService";
+import { FormularioP } from "../../components/FormularioP/FormularioP";
+import styles from "./Edicao.module.css";
 
 export const Edicao = () => {
   const { id } = useParams();
@@ -53,13 +55,27 @@ export const Edicao = () => {
   };
   if (loading) return <p>Carregando...</p>;
   return (
-    <div>
-      <div>
-        <button onClick={() => navegacao("/")}>Voltar</button>
-        <h1>Deletar Produto</h1>
-        <button onClick={handleDelete}>Deletar </button>
+    <div className={styles.container}>
+      <div className={styles.delete}>
+        <button className={styles.button} onClick={handleDelete}>
+          Deletar{" "}
+        </button>
       </div>
-      <h1>Editar Produtos</h1>
+      <div className={styles.edicao}>
+        <h1>Editar Produto</h1>
+        <FormularioP
+          produtos={produto}
+          onChange={handleChange}
+          onSubmit={handleSubmit}
+          isEditing
+          isChanged={isChanged}
+        />
+      </div>
+      <div className={styles.volta}>
+        <button className={styles.back} onClick={() => navegacao("/")}>
+          Voltar
+        </button>
+      </div>
     </div>
   );
 };
