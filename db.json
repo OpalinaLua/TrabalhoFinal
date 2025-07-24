@@ -13,6 +13,48 @@
       "valor": 50,
       "descricao": "Mussarela, tomate e orégano",
       "imagem": "https://pizzafacil.ind.br/website2018/wp-content/uploads/2018/04/pizza-mussarela-883x395.jpg"
+    },
+    {
+      "id": "fe0c",
+      "nome": "Salgadinhos",
+      "valor": "50",
+      "descricao": "cento",
+      "imagem": "https://bing.com/th?id=OSK.0fbb78c2d7c4a22237d7436b566ff9a3"
+    },
+    {
+      "id": "101e",
+      "nome": "Refrigerante",
+      "valor": "10",
+      "descricao": "unidade",
+      "imagem": "https://st3.depositphotos.com/1063437/13933/i/1600/depositphotos_139337744-stock-photo-bottles-of-assorted-coca-cola.jpg"
+    },
+    {
+      "id": "58ac",
+      "nome": "Hamburgers",
+      "valor": "35",
+      "descricao": "unidade",
+      "imagem": "https://tse1.mm.bing.net/th/id/OIP.T3urhhCLh-Z7A8OxJE-hegHaD4?rs=1&pid=ImgDetMain&o=7&rm=3"
+    },
+    {
+      "id": "d98b",
+      "nome": "Bata frita",
+      "valor": "25",
+      "descricao": "porção",
+      "imagem": "https://bing.com/th?id=OSK.19a80e0b5df29da1aecd2ceeaf371894"
+    },
+    {
+      "id": "ad51",
+      "nome": "chesseburger",
+      "valor": "40",
+      "descricao": "unidade",
+      "imagem": "https://tse1.mm.bing.net/th/id/OIP.N7ed8M0chLR8LfbpQT1GYAHaDn?rs=1&pid=ImgDetMain&o=7&rm=3"
+    },
+    {
+      "id": "5c7b",
+      "nome": "cerveja",
+      "valor": "10",
+      "descricao": "lata",
+      "imagem": "https://tse3.mm.bing.net/th/id/OIP.C2OiVbIG_vC0OW5VEc94UwHaGW?rs=1&pid=ImgDetMain&o=7&rm=3"
     }
   ],
   "compras": [
