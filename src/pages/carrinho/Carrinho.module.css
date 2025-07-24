@@ -7,10 +7,14 @@
   border-radius: 10px;
   box-shadow: rgb(228, 227, 227) 2px 2px 2px 5px;
   position: relative;
+  justify-content: center;
+  align-items: center;
 }
 .carrinho {
   display: flex;
   flex-direction: row;
+  margin: 15px;
+  gap: 15px;
 }
 .produto {
   display: flex;
@@ -63,12 +67,19 @@
   gap: 5px;
 }
 .mais {
+  font-size: large;
   border: none;
+  color: #fff;
   width: 25px;
   height: 25px;
   border-radius: 25%;
-  background: rgba(28, 173, 35, 0.9);
-  cursor: pointer;
+  text-shadow: 0px 1px 0px #2d7030;
+  background: linear-gradient(rgb(60, 207, 41), #1a991a);
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
 }
 .quantidade {
   display: flex;
@@ -76,18 +87,62 @@
   text-align: center;
 }
 .menos {
+  font-size: large;
   border: none;
+  color: #fff;
   width: 25px;
   height: 25px;
   border-radius: 25%;
-  background: rgba(173, 28, 28, 0.9);
-  cursor: pointer;
+  text-shadow: 0px 1px 0px #702d2d;
+  background: linear-gradient(rgb(207, 41, 41), #991a1a);
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
 }
-
 .total {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: large;
+  margin: 10px;
 }
-.caixaT {
+.caixaFL {
+  display: flex;
+  gap: 60px;
+}
+.finalizar {
+  font-size: large;
+  color: #fff;
+  width: 100px;
+  height: 50px;
+  border-color: #4e6096;
+  border-width: 1px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 0px 2px #9fb4f2;
+  text-shadow: 0px 1px 0px #283966;
+  background: linear-gradient(rgb(120, 146, 194), #476e9e);
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
 }
 .limpar {
+  font-size: large;
+  color: #fff;
+  width: 100px;
+  height: 50px;
+  border-color: #4e6096;
+  border-width: 1px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 0px 2px #9fb4f2;
+  text-shadow: 0px 1px 0px #283966;
+  background: linear-gradient(rgb(120, 146, 194), #476e9e);
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
 }

@@ -131,7 +131,7 @@ export default function PaymentForm() {
               required
             />
           </label>
-          <button className={styles.button} type="submit">
+          <button className={styles.botao} type="submit">
             Finalizar pagamento
           </button>
         </form>

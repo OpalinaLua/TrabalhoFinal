@@ -46,16 +46,24 @@ export const Carrinho = () => {
         ))}
       </div>
       {cartItems.length > 0 ? (
-        <div className={styles.caixaT}>
+        <div>
           <h1 className={styles.total}>Total: R${getCartTotal()}</h1>
-          <button
-            className={styles.limpar}
-            onClick={() => {
-              clearCart();
-            }}
-          >
-            Limpar carrinho
-          </button>
+          <div className={styles.caixaFL}>
+            <button
+              className={styles.finalizar}
+              onClick={() => navigate("/formCompras")}
+            >
+              Finalizar compra
+            </button>
+            <button
+              className={styles.limpar}
+              onClick={() => {
+                clearCart();
+              }}
+            >
+              Limpar carrinho
+            </button>
+          </div>
         </div>
       ) : (
         <h1 className={styles.vazio}>Seu Carrinho está vazio</h1>
