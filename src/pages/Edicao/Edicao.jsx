@@ -56,23 +56,19 @@ export const Edicao = () => {
   if (loading) return <p>Carregando...</p>;
   return (
     <div className={styles.container}>
-      <div className={styles.delete}>
-        <button className={styles.button} onClick={handleDelete}>
-          Deletar{" "}
+      <h1>Editar Produto</h1>
+      <FormularioP
+        produtos={produto}
+        onChange={handleChange}
+        onSubmit={handleSubmit}
+        isEditing
+        isChanged={isChanged}
+      />
+      <div className={styles.botoes}>
+        <button className={styles.botao} onClick={handleDelete}>
+          Deletar
         </button>
-      </div>
-      <div className={styles.edicao}>
-        <h1>Editar Produto</h1>
-        <FormularioP
-          produtos={produto}
-          onChange={handleChange}
-          onSubmit={handleSubmit}
-          isEditing
-          isChanged={isChanged}
-        />
-      </div>
-      <div className={styles.volta}>
-        <button className={styles.back} onClick={() => navegacao("/")}>
+        <button className={styles.botao2} onClick={() => navegacao("/")}>
           Voltar
         </button>
       </div>
