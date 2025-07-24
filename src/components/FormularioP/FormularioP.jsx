@@ -33,6 +33,7 @@ export const FormularioP = ({
             <label className={styles.titulo}>Valor: </label>
             <input
               className={styles.input}
+              type="text"
               name="valor"
               value={produtos.valor}
               onChange={onChange}
@@ -43,9 +44,11 @@ export const FormularioP = ({
             <label className={styles.titulo}>Descrição: </label>
             <input
               className={styles.input}
+              type="text"
               name="descricao"
               value={produtos.descricao}
               onChange={onChange}
+              required
             />
           </div>
 
@@ -58,7 +61,7 @@ export const FormularioP = ({
               type="text"
               name="urlImagem"
               value={produtos.imagem}
-              onChange={handleChange}
+              onChange={onChange}
               required
             />
           </div>
