@@ -1,8 +1,11 @@
 import { LogIn } from "lucide-react";
 import { NavLink } from "react-router";
 import styles from "./LoginNavbar.module.css";
+import { useAuth } from "../../contexts/AuthContext";
 
 export const LoginNavbar = () => {
+  const { logout } = useAuth();
+
   return (
     <>
       <div className={styles.conteiner}>
@@ -22,6 +25,9 @@ export const LoginNavbar = () => {
             )
           }
         </NavLink>
+        <button className={styles.button} onClick={logout}>
+          Logout
+        </button>
       </div>
     </>
   );

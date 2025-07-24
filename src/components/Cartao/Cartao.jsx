@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { buscarProdutos } from "../../service/apiService";
 import styles from "./Cartao.module.css";
-import { useNavigate } from "react-router";
 import { useCart } from "../../contexts/CartContext";
 
 export const Cartao = () => {
