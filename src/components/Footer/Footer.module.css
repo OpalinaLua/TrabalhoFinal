@@ -1,6 +1,6 @@
 .footer {
+  position: fixed;
   bottom: 0;
-  position: absolute;
   width: 100%;
   backdrop-filter: blur(10px);
   border-top: 1px solid rgba(8, 8, 8, 0.8);

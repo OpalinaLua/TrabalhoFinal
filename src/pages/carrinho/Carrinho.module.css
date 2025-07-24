@@ -1,8 +1,6 @@
-.conteiner {
+.naosei {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
   margin: 5px;
   padding: 5px;
   background-color: rgb(235, 249, 255);
@@ -10,9 +8,23 @@
   box-shadow: rgb(228, 227, 227) 2px 2px 2px 5px;
   position: relative;
 }
+.carrinho {
+  display: flex;
+  flex-direction: row;
+}
+.produto {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
 .titulo,
 .vazio {
   font-size: x-large;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 20px;
 }
 .imgcaixa {
   position: relative;
@@ -47,6 +59,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row-reverse;
   gap: 5px;
 }
 .mais {
