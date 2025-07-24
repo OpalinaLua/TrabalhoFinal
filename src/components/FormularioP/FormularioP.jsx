@@ -33,7 +33,7 @@ export const FormularioP = ({
             <label className={styles.titulo}>Valor: </label>
             <input
               className={styles.input}
-              type="text"
+              type="number"
               name="valor"
               value={produtos.valor}
               onChange={onChange}
