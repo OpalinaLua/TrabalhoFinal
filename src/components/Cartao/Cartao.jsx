@@ -40,10 +40,14 @@ export const Cartao = () => {
             <p className={styles.valor}>R${produto.valor}</p>
           </div>
           <p className={styles.descricao}>{produto.descricao}</p>
-          <button className={styles.botao} onClick={() => addToCart(produto)}>
-            Adicionar ao carrinho
-          </button>
-          <Link to={`/edicao/${produto.id}`}>Editar</Link>
+          <div className={styles.caixabotoes}>
+            <button className={styles.botao} onClick={() => addToCart(produto)}>
+              Adicionar ao carrinho
+            </button>
+            <Link className={styles.editar} to={`/edicao/${produto.id}`}>
+              Editar
+            </Link>
+          </div>
         </div>
       ))}
     </>
