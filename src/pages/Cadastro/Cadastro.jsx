@@ -10,6 +10,7 @@ export const Cadastro = () => {
     nome: "",
     valor: "",
     descricao: "",
+    imagem: "",
   };
 
   const [produto, setProdutos] = useState(produtoInicial);

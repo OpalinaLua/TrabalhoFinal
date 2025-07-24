@@ -50,7 +50,8 @@ export const Edicao = () => {
     return (
       produto.nome !== produtoInicial.nome ||
       produto.valor !== produtoInicial.valor ||
-      produto.descricao !== produtoInicial.descricao
+      produto.descricao !== produtoInicial.descricao ||
+      produto.imagem !== produtoInicial.imagem
     );
   };
   if (loading) return <p>Carregando...</p>;
