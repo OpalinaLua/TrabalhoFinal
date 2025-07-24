@@ -31,6 +31,12 @@ export const Cadastro = () => {
     <div>
       <button onClick={() => navegacao("/")}>Voltar</button>
       <h1>Novo Produto</h1>
+      <FormularioP
+        produtos={produto}
+        onChange={handleChange}
+        onSubmit={handleSubmit}
+        isChanged={isChanged}
+      />
     </div>
   );
 };
