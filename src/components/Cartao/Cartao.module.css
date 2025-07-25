@@ -24,6 +24,7 @@
   height: 100%;
   border: none;
   border-radius: 10px;
+  object-fit: cover;
 }
 .caixa {
   width: 100%;
