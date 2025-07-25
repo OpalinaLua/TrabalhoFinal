@@ -1,19 +1,39 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { criarProdutos } from "../../service/apiService";
 import { FormularioP } from "../../components/FormularioP/FormularioP";
 import styles from "./Cadastro.module.css";
+import { buscarCompras } from "../../service/comprasService";
+
+const produtoInicial = {
+  nome: "",
+  valor: "",
+  descricao: "",
+  imagem: "",
+};
 
 export const Cadastro = () => {
+  const [produto, setProdutos] = useState(produtoInicial);
+  const [compras, setCompras] = useState([]);
+  const [loading, setLoading] = useState(true);
   const navegacao = useNavigate();
-  const produtoInicial = {
-    nome: "",
-    valor: "",
-    descricao: "",
-    imagem: "",
+
+  const getCompras = async () => {
+    try {
+      const data = await buscarCompras();
+      setCompras(data);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const [produto, setProdutos] = useState(produtoInicial);
+  useEffect(() => {
+    getCompras();
+  }, []);
+
+  if (loading) return <h1>Carregando</h1>;
 
   const handleChange = (e) => {
     setProdutos({ ...produto, [e.target.name]: e.target.value });
@@ -42,6 +62,13 @@ export const Cadastro = () => {
       <button className={styles.botao} onClick={() => navegacao("/")}>
         Voltar
       </button>
+      <div className={styles.container}>
+        {compras.map((compra) => (
+          <div key={compra.id}>
+            <p className={styles.compras}>{compra.name}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
