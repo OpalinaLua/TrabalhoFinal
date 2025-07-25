@@ -27,14 +27,33 @@ export const CartaoCompras = ({ compra }) => {
       {compras.map((compra) => (
         <div className={styles.container}>
           <div key={compra.id}>
-            <p className={styles.compras}>{compra.name}</p>
-            <p className={styles.compras}>{compra.cardNumber}</p>
-            <p className={styles.compras}>{compra.expiry}</p>
-            <p className={styles.compras}>{compra.cvv}</p>
-            <p className={styles.compras}>{compra.cidade}</p>
-            <p className={styles.compras}>{compra.estado}</p>
-            <p className={styles.compras}>{compra.endereco}</p>
-            <p className={styles.compras}>{compra.cep}</p>
+            <p className={styles.compras}>
+              <strong>Nome</strong> {compra.name}
+            </p>
+            <p className={styles.compras}>
+              <strong>Número do cartão: </strong>
+              {compra.cardNumber}
+            </p>
+            <p className={styles.compras}>
+              <strong>Data de Validade: </strong>
+              {compra.expiry}
+            </p>
+            <p className={styles.compras}>
+              <strong>CVV: </strong> {compra.cvv}
+            </p>
+            <p className={styles.compras}>
+              <strong>Cidade: </strong>
+              {compra.cidade}
+            </p>
+            <p className={styles.compras}>
+              <strong>Estado: </strong> {compra.estado}
+            </p>
+            <p className={styles.compras}>
+              <strong>Endereço: </strong> {compra.endereco}
+            </p>
+            <p className={styles.compras}>
+              <strong>CEP: </strong> {compra.cep}
+            </p>
           </div>
         </div>
       ))}
