@@ -10,14 +10,12 @@
   height: 50px;
   border-width: 1px;
   color: #fff;
-  border-color: #4e6096;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  box-shadow: 0px 0px 0px 2px #9fb4f2;
-  text-shadow: 0px 1px 0px #283966;
-  background: linear-gradient(rgb(120, 146, 194), #476e9e);
+  border-color: #50964e;
+  border-width: 1px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 0px 2px #a6f29f;
+  text-shadow: 0px 1px 0px #28662d;
+  background: linear-gradient(rgb(120, 194, 126), #479e4e);
   text-decoration: none;
   display: flex;
   justify-content: center;
@@ -26,7 +24,7 @@
 }
 
 .link:hover {
-  background: linear-gradient(#476e9e, rgb(120, 146, 194));
+  background: linear-gradient(#479e4e, rgb(120, 194, 126));
   transform: scale(1.1);
 }
 
@@ -37,15 +35,12 @@
   height: 50px;
   border-width: 1px;
   color: #fff;
-  border-color: #599bb3;
-  font-weight: bold;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-  box-shadow: 0px 10px 14px -7px #276873;
-  text-shadow: 0px 1px 0px #3d768a;
-  background: linear-gradient(#599bb3, #408c99);
+  border-color: #4e967e;
+  border-width: 1px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 0px 2px #9ff2c8;
+  text-shadow: 0px 1px 0px #28665e;
+  background: linear-gradient(rgb(120, 194, 176), #479e75);
   text-decoration: none;
   display: flex;
   justify-content: center;
@@ -53,6 +48,28 @@
 }
 
 .linkAtivo:hover {
-  background: linear-gradient(#408c99, #599bb3);
+  background: linear-gradient(#479e90, rgb(120, 194, 194));
+  transform: scale(1.1);
+}
+.button {
+  font-size: 20px;
+  font-family: Embed code;
+  width: 140px;
+  height: 50px;
+  border-width: 1px;
+  color: #fff;
+  border-color: #b92c2c;
+  border-radius: 10px;
+  box-shadow: 0px 0px 0px 2px #f55d5d;
+  text-shadow: 0px 1px 0px #8b3737;
+  background: linear-gradient(rgb(196, 46, 46), #a52d2d);
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+.button:hover {
+  background: linear-gradient(#a52d2d, rgb(196, 46, 46));
   transform: scale(1.1);
 }

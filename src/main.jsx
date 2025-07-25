@@ -8,7 +8,7 @@ import { CartProvider } from "./contexts/CartContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/TrabalhoFinal">
       <AuthProvider>
         <CartProvider>
           <App />

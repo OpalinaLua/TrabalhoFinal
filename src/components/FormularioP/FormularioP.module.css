@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
 
-.container {
+.conteiner {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -9,23 +9,20 @@
   margin: auto;
   background-color: rgb(183, 203, 240);
   width: 40%;
-  height: 400px;
+  height: 200px;
   border-radius: 12px;
 }
-
 .form {
   display: flex;
   flex-direction: column;
   gap: 7px;
-  margin-top: 6px;
+  margin-top: 4px;
 }
-
 .titulo {
   font-family: Embed code;
 }
-
 .input {
-  margin-left: 2.5px;
+  margin: auto;
   border: 1px solid black;
   border-radius: 4px;
   background-color: rgb(204, 214, 233);
@@ -38,14 +35,14 @@
   margin: auto;
   margin-top: 10px;
   color: #fff;
-  width: 200px;
+  width: 150px;
   height: 50px;
-  border-color: #4e6096;
+  border-color: #50964e;
   border-width: 1px;
   border-radius: 10px;
-  box-shadow: 0px 0px 0px 2px #9fb4f2;
-  text-shadow: 0px 1px 0px #283966;
-  background: linear-gradient(rgb(120, 146, 194), #476e9e);
+  box-shadow: 0px 0px 0px 2px #a6f29f;
+  text-shadow: 0px 1px 0px #28662d;
+  background: linear-gradient(rgb(120, 194, 126), #479e4e);
   text-decoration: none;
   font-weight: bold;
 }

@@ -40,6 +40,23 @@ export const Navbar = () => {
             )
           }
         </NavLink>
+        <NavLink
+          to="/cadastro"
+          className={({ isActive }) =>
+            isActive ? styles.linkAtivo : styles.link
+          }
+        >
+          {({ isActive }) =>
+            isActive ? (
+              <>
+                <ShoppingCart />
+                Cadastro
+              </>
+            ) : (
+              "Cadastro"
+            )
+          }
+        </NavLink>
       </div>
     </>
   );

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { buscarProdutos } from "../../service/apiService";
 import styles from "./Cartao.module.css";
-import { useNavigate } from "react-router";
 import { useCart } from "../../contexts/CartContext";
+import { Link } from "react-router";
 
 export const Cartao = () => {
   const [produtos, setProdutos] = useState([]);
@@ -19,7 +19,6 @@ export const Cartao = () => {
       setLoading(false);
     }
   };
-  console.log(produtos);
 
   useEffect(() => {
     getData();
@@ -41,9 +40,14 @@ export const Cartao = () => {
             <p className={styles.valor}>R${produto.valor}</p>
           </div>
           <p className={styles.descricao}>{produto.descricao}</p>
-          <button className={styles.botao} onClick={() => addToCart(produto)}>
-            Adicionar ao carrinho
-          </button>
+          <div className={styles.caixabotoes}>
+            <button className={styles.botao} onClick={() => addToCart(produto)}>
+              Adicionar ao carrinho
+            </button>
+            <Link className={styles.editar} to={`/edicao/${produto.id}`}>
+              Editar
+            </Link>
+          </div>
         </div>
       ))}
     </>

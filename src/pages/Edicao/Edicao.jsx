@@ -6,6 +6,7 @@ import {
   editarProdutos,
 } from "../../service/apiService";
 import { FormularioP } from "../../components/FormularioP/FormularioP";
+import styles from "./Edicao.module.css";
 
 export const Edicao = () => {
   const { id } = useParams();
@@ -49,18 +50,14 @@ export const Edicao = () => {
     return (
       produto.nome !== produtoInicial.nome ||
       produto.valor !== produtoInicial.valor ||
-      produto.descricao !== produtoInicial.descricao
+      produto.descricao !== produtoInicial.descricao ||
+      produto.imagem !== produtoInicial.imagem
     );
   };
   if (loading) return <p>Carregando...</p>;
   return (
-    <div>
-      <div>
-        <button onClick={() => navegacao("/")}>Voltar</button>
-        <h1>Deletar Produto</h1>
-        <button onClick={handleDelete}>Deletar </button>
-      </div>
-      <h1>Editar Produtos</h1>
+    <div className={styles.container}>
+      <h1>Editar Produto</h1>
       <FormularioP
         produtos={produto}
         onChange={handleChange}
@@ -68,6 +65,14 @@ export const Edicao = () => {
         isEditing
         isChanged={isChanged}
       />
+      <div className={styles.botoes}>
+        <button className={styles.botao} onClick={handleDelete}>
+          Deletar
+        </button>
+        <button className={styles.botao2} onClick={() => navegacao("/")}>
+          Voltar
+        </button>
+      </div>
     </div>
   );
 };
