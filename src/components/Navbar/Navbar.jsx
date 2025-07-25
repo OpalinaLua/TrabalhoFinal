@@ -48,6 +48,14 @@ export const Navbar = () => {
         >
           {({ isActive }) => (isActive ? <>Cadastro</> : "Cadastro")}
         </NavLink>
+        <NavLink
+          to="/compras"
+          className={({ isActive }) =>
+            isActive ? styles.linkAtivo : styles.link
+          }
+        >
+          {({ isActive }) => (isActive ? <>Compras</> : "Compras")}
+        </NavLink>
       </div>
     </>
   );

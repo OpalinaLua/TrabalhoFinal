@@ -8,6 +8,7 @@ import { Carrinho } from "../pages/Carrinho/Carrinho";
 import PaymentForm from "../pages/FormCompra/FormCompra";
 import { useCallback, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
+import { Compras } from "../pages/Compras/Compras";
 
 const PrivateRoutes = ({ children }) => {
   const { logado } = useAuth();
@@ -74,6 +75,14 @@ export const Router = () => {
           element={
             <PrivateRoutes>
               <PaymentForm />
+            </PrivateRoutes>
+          }
+        />
+        <Route
+          path="/compras"
+          element={
+            <PrivateRoutes>
+              <Compras />
             </PrivateRoutes>
           }
         />
