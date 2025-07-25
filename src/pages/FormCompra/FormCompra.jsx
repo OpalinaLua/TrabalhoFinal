@@ -22,11 +22,16 @@ export default function PaymentForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const formCompra = {
+      ...formData,
+      carrinho: cartItems,
+    };
     try {
-      await criarCompras(formData);
+      await criarCompras(formCompra);
       toast.success("Compra finalizada com sucesso");
       setTimeout(() => {
         navegacao("/");
+        clearCart();
       }, 1500);
     } catch (error) {
       console.error(error);
@@ -60,7 +65,7 @@ export default function PaymentForm() {
             Número do Cartão:
             <input
               className={styles.input}
-              type="text"
+              type="number"
               name="cardNumber"
               placeholder="XXXX XXXX XXXX XXXX"
               value={formData.cardNumber}
@@ -74,11 +79,12 @@ export default function PaymentForm() {
             Validade (MM/AA):
             <input
               className={styles.input}
-              type="text"
+              type="number"
               name="expiry"
               value={formData.expiry}
               onChange={handleChange}
               placeholder="MM/AA"
+              maxLength="4"
               required
             />
           </label>
@@ -87,12 +93,12 @@ export default function PaymentForm() {
             CVV:
             <input
               className={styles.input}
-              type="text"
+              type="number"
               name="cvv"
               placeholder="XXX"
               value={formData.cvv}
               onChange={handleChange}
-              maxLength="4"
+              maxLength="3"
               required
             />
           </label>
@@ -145,11 +151,7 @@ export default function PaymentForm() {
               required
             />
           </label>
-          <button
-            className={styles.botao}
-            onClick={() => clearCart(cartItems)}
-            type="submit"
-          >
+          <button className={styles.botao} type="submit">
             Finalizar pagamento
           </button>
         </form>
