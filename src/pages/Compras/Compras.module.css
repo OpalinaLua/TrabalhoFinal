@@ -1,9 +1,9 @@
-.home {
+.container {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin: 20px;
-  gap: 10px;
-  margin-bottom: 10rem;
+  padding: 8px;
+  gap: 5px;
 }

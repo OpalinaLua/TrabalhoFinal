@@ -1,19 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { criarProdutos } from "../../service/apiService";
 import { FormularioP } from "../../components/FormularioP/FormularioP";
 import styles from "./Cadastro.module.css";
+import { buscarCompras } from "../../service/comprasService";
+
+const produtoInicial = {
+  nome: "",
+  valor: "",
+  descricao: "",
+  imagem: "",
+};
 
 export const Cadastro = () => {
-  const navegacao = useNavigate();
-  const produtoInicial = {
-    nome: "",
-    valor: "",
-    descricao: "",
-    imagem: "",
-  };
-
   const [produto, setProdutos] = useState(produtoInicial);
+  const navegacao = useNavigate();
 
   const handleChange = (e) => {
     setProdutos({ ...produto, [e.target.name]: e.target.value });

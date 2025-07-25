@@ -1,7 +1,14 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./FormCompra.module.css";
+import { criarCompras } from "../../service/comprasService";
+import { useNavigate } from "react-router";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useCart } from "../../contexts/CartContext";
 
 export default function PaymentForm() {
+  const navegacao = useNavigate();
+  const { clearCart, cartItems } = useCart();
   const [formData, setFormData] = useState({
     name: "",
     cardNumber: "",
@@ -13,15 +20,27 @@ export default function PaymentForm() {
     cep: "",
   });
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formCompra = {
+      ...formData,
+      carrinho: cartItems,
+    };
+    try {
+      await criarCompras(formCompra);
+      toast.success("Compra finalizada com sucesso");
+      setTimeout(() => {
+        navegacao("/");
+        clearCart();
+      }, 1500);
+    } catch (error) {
+      console.error(error);
+      toast.error("Erro ao finalizar a compra");
+    }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Aqui você faria a integração com o seu sistema de pagamento
-    console.log("Dados do pagamento:", formData);
-    alert("Pagamento enviado!");
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
@@ -46,7 +65,7 @@ export default function PaymentForm() {
             Número do Cartão:
             <input
               className={styles.input}
-              type="text"
+              type="number"
               name="cardNumber"
               placeholder="XXXX XXXX XXXX XXXX"
               value={formData.cardNumber}
@@ -60,11 +79,12 @@ export default function PaymentForm() {
             Validade (MM/AA):
             <input
               className={styles.input}
-              type="text"
+              type="number"
               name="expiry"
               value={formData.expiry}
               onChange={handleChange}
               placeholder="MM/AA"
+              maxLength="4"
               required
             />
           </label>
@@ -73,12 +93,12 @@ export default function PaymentForm() {
             CVV:
             <input
               className={styles.input}
-              type="text"
+              type="number"
               name="cvv"
               placeholder="XXX"
               value={formData.cvv}
               onChange={handleChange}
-              maxLength="4"
+              maxLength="3"
               required
             />
           </label>
@@ -135,6 +155,7 @@ export default function PaymentForm() {
             Finalizar pagamento
           </button>
         </form>
+        <ToastContainer position="top-right" autoClose={3000} />
       </div>
     </>
   );
