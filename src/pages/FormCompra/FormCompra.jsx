@@ -1,7 +1,14 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./FormCompra.module.css";
+import { criarCompras } from "../../service/comprasService";
+import { useNavigate } from "react-router";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useCart } from "../../contexts/CartContext";
 
 export default function PaymentForm() {
+  const navegacao = useNavigate();
+  const { clearCart, cartItems } = useCart();
   const [formData, setFormData] = useState({
     name: "",
     cardNumber: "",
@@ -13,15 +20,22 @@ export default function PaymentForm() {
     cep: "",
   });
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await criarCompras(formData);
+      toast.success("Compra finalizada com sucesso");
+      setTimeout(() => {
+        navegacao("/");
+      }, 1500);
+    } catch (error) {
+      console.error(error);
+      toast.error("Erro ao finalizar a compra");
+    }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Aqui você faria a integração com o seu sistema de pagamento
-    console.log("Dados do pagamento:", formData);
-    alert("Pagamento enviado!");
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
@@ -131,10 +145,15 @@ export default function PaymentForm() {
               required
             />
           </label>
-          <button className={styles.botao} type="submit">
+          <button
+            className={styles.botao}
+            onClick={() => clearCart(cartItems)}
+            type="submit"
+          >
             Finalizar pagamento
           </button>
         </form>
+        <ToastContainer position="top-right" autoClose={3000} />
       </div>
     </>
   );
