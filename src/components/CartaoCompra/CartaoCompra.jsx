@@ -28,7 +28,7 @@ export const CartaoCompras = ({ compra }) => {
         <div className={styles.container}>
           <div key={compra.id}>
             <p className={styles.compras}>
-              <strong>Nome</strong> {compra.name}
+              <strong>Nome: </strong> {compra.name}
             </p>
             <p className={styles.compras}>
               <strong>Número do cartão: </strong>
