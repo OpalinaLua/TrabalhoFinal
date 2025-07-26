@@ -54,6 +54,13 @@ export const CartaoCompras = ({ compra }) => {
             <p className={styles.compras}>
               <strong>CEP: </strong> {compra.cep}
             </p>
+            {compra.carrinho.map((item) => (
+              <div key={item.id}>
+                <p>{item.nome}</p>
+                <p>{item.valor}</p>
+                <p>{item.quantity}</p>
+              </div>
+            ))}
           </div>
         </div>
       ))}
