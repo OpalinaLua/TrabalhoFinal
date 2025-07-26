@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { buscarCompras } from "../../service/comprasService";
+import { buscarCompras, deletarCompra } from "../../service/comprasService";
 import styles from "./CartaoCompra.module.css";
+import { useParams } from "react-router";
 
 export const CartaoCompras = ({ compra }) => {
   const [compras, setCompras] = useState([]);
@@ -21,12 +22,27 @@ export const CartaoCompras = ({ compra }) => {
     getCompras();
   }, []);
 
+  const handleDelete = async (compraID) => {
+    const confirm = window.confirm(
+      "Tem certeza que deseja deletar essa compra?"
+    );
+
+    if (confirm) {
+      try {
+        await deletarCompra(String(compraID));
+        getCompras();
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  };
+
   if (loading) return <h1>Carregando</h1>;
   return (
     <>
       {compras.map((compra) => (
-        <div className={styles.container}>
-          <div key={compra.id}>
+        <div key={compra.id} className={styles.container}>
+          <div>
             <p className={styles.compras}>
               <strong>Nome: </strong> {compra.name}
             </p>
@@ -56,11 +72,26 @@ export const CartaoCompras = ({ compra }) => {
             </p>
             {compra.carrinho.map((item) => (
               <div key={item.id}>
-                <p>{item.nome}</p>
-                <p>{item.valor}</p>
-                <p>{item.quantity}</p>
+                <p>
+                  <strong>Produto: </strong>
+                  {item.nome}
+                </p>
+                <p>
+                  <strong>Valor: </strong>
+                  {item.valor}
+                </p>
+                <p>
+                  <strong>Quantidade: </strong>
+                  {item.quantity}
+                </p>
               </div>
             ))}
+            <button
+              className={styles.delete}
+              onClick={() => handleDelete(compra.id)}
+            >
+              Deletar
+            </button>
           </div>
         </div>
       ))}

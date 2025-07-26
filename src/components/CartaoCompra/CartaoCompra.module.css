@@ -11,9 +11,26 @@
   width: 15%;
   height: 30%;
   box-shadow: 0 0 5px rgb(18, 21, 214);
+  margin-bottom: 10px;
 }
 
 .compras {
   font-family: monospace;
   color: black;
+}
+
+.delete {
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  margin: 5px;
+  background-color: red;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.delete:hover {
+  background-color: brown;
+  transform: scale(1.1);
 }
