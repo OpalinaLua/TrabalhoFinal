@@ -1,7 +1,4 @@
-import { FaArrowRight } from "react-icons/fa";
 import styles from "./Footer.module.css";
-import { TbTemperatureSun } from "react-icons/tb";
-import { IoIosPartlySunny } from "react-icons/io";
 import axios from "axios";
 import { useEffect, useState } from "react";
 

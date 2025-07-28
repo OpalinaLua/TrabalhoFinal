@@ -9,3 +9,7 @@ export const buscarCompras = async () => {
     const {data} = await api.get("/compras")
     return data
 }
+
+export const deletarCompra = async (id) => {
+    const {data} = await api.delete(`/compras/${id}`)
+}
