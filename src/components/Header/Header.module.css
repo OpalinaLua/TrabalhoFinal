@@ -10,30 +10,27 @@
   align-items: center;
   font-family: monospace;
   bottom: auto;
+  gap: 8px;
 }
 .header h1 {
   margin: 0;
   font-size: 1.5rem;
 }
 .date {
-  position: absolute;
-  right: 2rem;
-  top: 4rem;
   font-size: 1rem;
   opacity: 0.8;
   text-align: right;
-  margin-top: 5rem;
 }
 .botoes {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 12px;
 }
 
 @media (max-width: 600px) {
   .header {
     flex-direction: column;
-    align-items: flex-start;
   }
 }
