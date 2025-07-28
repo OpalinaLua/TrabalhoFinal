@@ -1,9 +1,7 @@
-import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { criarProdutos } from "../../service/apiService";
 import { FormularioP } from "../../components/FormularioP/FormularioP";
 import styles from "./Cadastro.module.css";
-import { buscarCompras } from "../../service/comprasService";
 
 const produtoInicial = {
   nome: "",

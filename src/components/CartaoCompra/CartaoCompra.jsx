@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { buscarCompras, deletarCompra } from "../../service/comprasService";
 import styles from "./CartaoCompra.module.css";
-import { useParams } from "react-router";
 
 export const CartaoCompras = ({ compra }) => {
   const [compras, setCompras] = useState([]);
