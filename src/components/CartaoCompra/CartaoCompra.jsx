@@ -70,16 +70,16 @@ export const CartaoCompras = ({ compra }) => {
               <strong>CEP: </strong> {compra.cep}
             </p>
             {compra.carrinho.map((item) => (
-              <div key={item.id}>
-                <p>
+              <div className={styles.carrinho} key={item.id}>
+                <p className={styles.itensCarrinho}>
                   <strong>Produto: </strong>
                   {item.nome}
                 </p>
-                <p>
+                <p className={styles.itensCarrinho}>
                   <strong>Valor: </strong>
                   {item.valor}
                 </p>
-                <p>
+                <p className={styles.itensCarrinho}>
                   <strong>Quantidade: </strong>
                   {item.quantity}
                 </p>
