@@ -4,7 +4,7 @@ import { Navbar } from "../Navbar/Navbar";
 import { LoginNavbar } from "../LoginNavbar/LoginNavbar";
 import { useCallback, useState } from "react";
 
-import logo from "./DLPS2.png";
+import logo from "./DLPS.png";
 
 export function Header({ onSearch, onClear }) {
   const [searchValue, setSearchValue] = useState("");
@@ -37,7 +37,7 @@ export function Header({ onSearch, onClear }) {
         {" "}
         <img
           src={logo}
-          style={{ width: "120px", height: "auto" }}
+          style={{ width: "160px", height: "auto" }}
           alt="Nossa Logo"
         />
       </div>
