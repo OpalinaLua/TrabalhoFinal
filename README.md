@@ -74,9 +74,9 @@ npm run dev
 
 ##🧑‍💻 Autores
 
--[OpalinaLua](https://github.com/OpalinaLua)
--[preudu-cmd-hash](https://github.com/preudu-cmd-hash)
--[mibide](https://github.com/mibide)
--[simoneraeder](https://github.com/simoneraeder)
+- [OpalinaLua](https://github.com/OpalinaLua)
+- [preudu-cmd-hash](https://github.com/preudu-cmd-hash)
+- [mibide](https://github.com/mibide)
+- [simoneraeder](https://github.com/simoneraeder)
 
 
