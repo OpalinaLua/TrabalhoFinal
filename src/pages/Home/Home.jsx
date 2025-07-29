@@ -1,10 +1,10 @@
 import { Cartao } from "../../components/Cartao/Cartao";
 import styles from "./Home.module.css";
-export const Home = () => {
+export const Home = ({ search }) => {
   return (
     <div className={styles.home}>
       <>
-        <Cartao />
+        <Cartao search={search} />
       </>
     </div>
   );

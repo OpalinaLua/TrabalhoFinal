@@ -28,6 +28,13 @@
   font-weight: bold;
 }
 
+.link > p {
+  padding: 2px 8px;
+  background-color: #76c0db;
+  margin-left: 10px;
+  border-radius: 50%;
+}
+
 .link:hover {
   background: linear-gradient(#476e9e, rgb(120, 146, 194));
   transform: scale(1.1);

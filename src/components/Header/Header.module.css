@@ -29,6 +29,40 @@
   gap: 12px;
 }
 
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 7px;
+}
+
+.input {
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(187, 211, 255);
+  color: black;
+}
+
+.button {
+  gap: 5px;
+  background-color: rgb(187, 211, 255);
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 0 3px blue;
+  transition: all 0.3s ease-out;
+}
+
+.button:hover {
+  background-color: rgb(127, 172, 255);
+  transform: scale(1.1);
+}
+
+.button:active {
+  transform: scale(0.9);
+}
+
 @media (max-width: 600px) {
   .header {
     flex-direction: column;
