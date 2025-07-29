@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { buscarProdutos } from "../../service/apiService";
 import styles from "./Cartao.module.css";
 import { useCart } from "../../contexts/CartContext";
 import { Link } from "react-router";
 
-export const Cartao = () => {
+export const Cartao = ({ search }) => {
   const [produtos, setProdutos] = useState([]);
   const [loading, setLoading] = useState(true);
   const { addToCart } = useCart();
@@ -20,13 +20,26 @@ export const Cartao = () => {
     }
   };
 
+  const produtosFiltrados = useMemo(() => {
+    if (!search.trim()) {
+      return produtos;
+    }
+    return produtos.filter((produto) => {
+      const searchLower = search.toLowerCase();
+      return (
+        produto.nome.toLowerCase().includes(searchLower) ||
+        produto.descricao.toLowerCase().includes(searchLower)
+      );
+    });
+  }, [search, produtos]);
+
   useEffect(() => {
     getData();
   }, []);
   if (loading) return <h1>Carregando...</h1>;
   return (
     <>
-      {produtos.map((produto) => (
+      {produtosFiltrados.map((produto) => (
         <div key={produto.id} className={styles.cartao}>
           <div className={styles.imgConteiner}>
             <img

@@ -1,8 +1,11 @@
 import { House, ShoppingCart } from "lucide-react";
 import { NavLink } from "react-router";
 import styles from "./Navbar.module.css";
+import { useCart } from "../../contexts/CartContext";
 
 export const Navbar = () => {
+  const { totalItemsQty } = useCart();
+
   return (
     <>
       <div className={styles.conteiner}>
@@ -29,16 +32,7 @@ export const Navbar = () => {
             isActive ? styles.linkAtivo : styles.link
           }
         >
-          {({ isActive }) =>
-            isActive ? (
-              <>
-                <ShoppingCart />
-                Carrinho
-              </>
-            ) : (
-              "Carrinho"
-            )
-          }
+          <ShoppingCart /> {totalItemsQty > 0 && <p>{totalItemsQty}</p>}
         </NavLink>
         <NavLink
           to="/cadastro"

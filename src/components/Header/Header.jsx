@@ -21,6 +21,7 @@ export function Header({ onSearch, onClear }) {
     const value = e.target.value;
     setSearchValue(value);
     onSearch(value);
+    console.log(value);
   }, []);
 
   const today = new Date();
@@ -47,6 +48,22 @@ export function Header({ onSearch, onClear }) {
       <div className={styles.botoes}>
         <Navbar />
         <LoginNavbar />
+      </div>
+      <div>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <input
+            className={styles.input}
+            type="text"
+            placeholder="Pesquisar produtos"
+            onChange={handleChange}
+          />
+          <button type="submit" className={styles.button}>
+            Pesquisar
+          </button>
+          <button onClick={onClear} className={styles.button}>
+            Limpar
+          </button>
+        </form>
       </div>
     </header>
   );
